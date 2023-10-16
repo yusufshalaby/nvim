@@ -16,4 +16,10 @@ return {
 	require("plugins.nvim-cmp"),
 	require("plugins.which-key"),
 	require("plugins.gitsigns"),
+	require("plugins.telescope"),
+	require("plugins.nvim-treesitter"),
+	require("plugins.Comment"),
+	require("plugins.indent-blankline"),
+	require("plugins.lualine"),
+	require("plugins.onedark"),
 }
