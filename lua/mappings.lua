@@ -8,6 +8,8 @@ map('n', '<C-l>', '<C-w>l', { unpack(opts), desc = "Window right" })
 map('n', '<C-j>', '<C-w>j', { unpack(opts), desc = "Window down" })
 map('n', '<C-k>', '<C-w>k', { unpack(opts), desc = "Window up" })
 map('n', '<Esc>', '<Cmd>noh<CR>', { unpack(opts), desc = "Clear highlights" })
+vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
+vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
 -- Buffers
 map('n', '<tab>', '<Cmd>BufferNext<CR>', opts)
@@ -59,3 +61,9 @@ vim.keymap.set('n', '<leader>fh', require('telescope.builtin').help_tags, { desc
 vim.keymap.set('n', '<leader>/', function()
   require("Comment.api").toggle.linewise.current()
 end, { desc = 'Comment line' })
+
+-- Diagnostic keymaps
+vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic message' })
+vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic message' })
+vim.keymap.set('n', '<leader>f', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
+vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
