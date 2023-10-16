@@ -18,15 +18,8 @@ if not vim.loop.fs_stat(lazypath) then
     lazypath,
   }
 end
+
 vim.opt.rtp:prepend(lazypath)
-
--- NOTE: Here is where you install your plugins.
---  You can configure plugins using the `config` key.
---
---  You can also configure plugins after the setup call,
---    as they will be available in your neovim runtime.
-require('lazy').setup({ require 'plugins' }, {})
-
 vim.o.hlsearch = true
 vim.wo.number = true
 vim.o.mouse = 'a'
@@ -41,6 +34,18 @@ vim.o.updatetime = 250
 vim.o.timeoutlen = 300
 vim.o.completeopt = 'menuone,noselect'
 vim.o.termguicolors = true
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+vim.opt.foldenable = false
+vim.opt.scrolloff = 8
+
+
+-- NOTE: Here is where you install your plugins.
+--  You can configure plugins using the `config` key.
+--
+--  You can also configure plugins after the setup call,
+--    as they will be available in your neovim runtime.
+require('lazy').setup({ require 'plugins' }, {})
 
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
@@ -58,13 +63,7 @@ vim.defer_fn(function()
   ---@diagnostic disable-next-line: missing-fields
   require('nvim-treesitter.configs').setup(require("plugins.nvim-treesitter"))
 end, 0)
-
-
--- [[ Configure LSP ]]
 require("plugins.lsp-config")
-
--- [[ Configure nvim-cmp ]]
--- See `:help cmp`
 require("plugins.nvim-cmp")
 
 require("mappings")
