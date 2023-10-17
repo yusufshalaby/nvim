@@ -25,6 +25,11 @@ return {
 	},
 	{
 		"romgrk/barbar.nvim",
+		cmd = {
+			"BufferNext",
+			"BufferPrevious",
+			"BufferGoTo",
+		},
 		dependencies = { "lewis6991/gitsigns.nvim", "nvim-tree/nvim-web-devicons" },
 		init = function()
 			vim.g.barbar_auto_setup = false
@@ -35,7 +40,8 @@ return {
 	{
 		"nvim-tree/nvim-tree.lua",
 		version = "*",
-		lazy = false,
+		-- lazy = false,
+		cmd = { "NvimTreeToggle", "NvimTreeOpen" },
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 		config = function()
 			require("nvim-tree").setup({})
@@ -44,17 +50,17 @@ return {
 	{
 		-- Autocompletion
 		"hrsh7th/nvim-cmp",
+		event = "InsertEnter",
 		dependencies = {
 			-- Snippet Engine & its associated nvim-cmp source
 			"L3MON4D3/LuaSnip",
 			"saadparwaiz1/cmp_luasnip",
-
 			-- Adds LSP completion capabilities
 			"hrsh7th/cmp-nvim-lsp",
-
 			-- Adds a number of user-friendly snippets
 			"rafamadriz/friendly-snippets",
 		},
+		-- config = require("plugins.cmp"),
 	},
 	{ "folke/which-key.nvim", opts = {} },
 	{ "lewis6991/gitsigns.nvim", opts = require("plugins.gitsigns") },
@@ -95,23 +101,8 @@ return {
 	},
 	{ "nvim-lualine/lualine.nvim", opts = require("plugins.lualine") },
 	{
-		"folke/tokyonight.nvim",
-		lazy = false,
-		priority = 1000,
-		opts = {},
-		config = function()
-			vim.cmd.colorscheme("tokyonight")
-		end,
-	},
-	{
 		"zbirenbaum/copilot.lua",
-		-- Lazy load when event occurs. Events are triggered
-		-- as mentioned in:
-		-- https://vi.stackexchange.com/a/4495/20389
 		event = "InsertEnter",
-		-- You can also have it load at immediately at
-		-- startup by commenting above and uncommenting below:
-		-- lazy = false
 		opts = { suggestion = { auto_trigger = true } },
 		config = function()
 			require("plugins.copilot")
@@ -123,14 +114,38 @@ return {
 		---@type Flash.Config
 		opts = {},
 		-- stylua: ignore
-		keys = {
-			{ "s", mode = { "n", "o", "x" }, function() require("flash").jump() end, desc = "Flash" },
-			{ "S", mode = { "n", "o", "x" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" },
-			{ "r", mode = "o", function() require("flash").remote() end, desc = "Remote Flash" },
-			{ "R", mode = { "o", "x" }, function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
-			{ "<c-s>", mode = { "c" }, function() require("flash").toggle() end, desc = "Toggle Flash Search" },
-		},
+		keys = require("plugins.flash").keys,
 	},
+	{
+		"rebelot/kanagawa.nvim",
+		lazy = false,
+		priority = 1000,
+		opts = {},
+		config = function()
+			require("kanagawa").setup({
+				theme = "wave",
+				overrides = function(colors)
+					return {
+						-- Assign a static color to strings
+						CursorLineNr = { fg = colors.palette.carpYellow, italic = false },
+					}
+				end,
+			})
+
+			vim.cmd.colorscheme("kanagawa")
+		end,
+	},
+	-- {
+	-- 	"folke/tokyonight.nvim",
+	-- 	lazy = false,
+	-- 	priority = 1000,
+	-- 	opts = {},
+	-- 	config = function()
+	-- 		require("tokyonight").setup({ style = "storm" })
+	--
+	-- 		vim.cmd.colorscheme("tokyonight")
+	-- 	end,
+	-- }
 	-- 	-- Theme inspired by Atom
 	-- 	"navarasu/onedark.nvim",
 	-- 	priority = 1000,
