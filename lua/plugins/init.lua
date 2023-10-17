@@ -60,7 +60,7 @@ return {
 			-- Adds a number of user-friendly snippets
 			"rafamadriz/friendly-snippets",
 		},
-		-- config = require("plugins.cmp"),
+		config = require("plugins.nvim-cmp"),
 	},
 	{ "folke/which-key.nvim", opts = {} },
 	{ "lewis6991/gitsigns.nvim", opts = require("plugins.gitsigns") },

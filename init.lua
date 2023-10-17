@@ -70,7 +70,7 @@ vim.defer_fn(function()
 	require("nvim-treesitter.configs").setup(require("plugins.nvim-treesitter"))
 end, 0)
 require("plugins.lsp-config")
-require("plugins.nvim-cmp")
+-- require("plugins.nvim-cmp")
 
 require("mappings")
 
