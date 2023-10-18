@@ -57,6 +57,8 @@ return {
 			"saadparwaiz1/cmp_luasnip",
 			-- Adds LSP completion capabilities
 			"hrsh7th/cmp-nvim-lsp",
+			"hrsh7th/cmp-buffer",
+			"hrsh7th/cmp-path",
 			-- Adds a number of user-friendly snippets
 			"rafamadriz/friendly-snippets",
 		},
@@ -67,6 +69,7 @@ return {
 	{
 		"nvim-telescope/telescope.nvim",
 		branch = "0.1.x",
+		cmd = "Telescope",
 		dependencies = {
 			"nvim-lua/plenary.nvim",
 			-- Fuzzy Finder Algorithm which requires local dependencies to be built.
