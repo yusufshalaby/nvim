@@ -24,7 +24,6 @@ vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 vim.opt.foldenable = false
 vim.opt.scrolloff = 8
-
 vim.o.hlsearch = true
 vim.o.mouse = "a"
 vim.o.clipboard = "unnamedplus"
@@ -38,19 +37,12 @@ vim.o.completeopt = "menuone,noselect"
 vim.o.termguicolors = true
 vim.o.cursorline = true
 vim.o.cursorlineopt = "number"
-
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
-
 vim.wo.number = true
 vim.wo.signcolumn = "yes"
 vim.wo.relativenumber = true
 
--- NOTE: Here is where you install your plugins.
---  You can configure plugins using the `config` key.
---
---  You can also configure plugins after the setup call,
---    as they will be available in your neovim runtime.
 require("lazy").setup({ require("plugins") }, {})
 
 -- [[ Highlight on yank ]]
@@ -64,13 +56,6 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 	pattern = "*",
 })
 
--- Defer Treesitter setup after first render to improve startup time of 'nvim {filename}'
--- vim.defer_fn(function()
--- 	---@diagnostic disable-next-line: missing-fields
--- 	require("nvim-treesitter.configs").setup(require("plugins.nvim-treesitter"))
--- end, 0)
--- require("plugins.lsp-config")
--- require("plugins.nvim-cmp")
 
 require("mappings")
 
