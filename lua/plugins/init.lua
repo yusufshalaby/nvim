@@ -115,6 +115,13 @@ return {
 			"nvim-treesitter/nvim-treesitter-textobjects",
 		},
 		build = ":TSUpdate",
+		event = { "BufReadPre", "BufNewFile" },
+		config = function()
+			vim.defer_fn(function()
+				---@diagnostic disable-next-line: missing-fields
+				require("nvim-treesitter.configs").setup(require("plugins.nvim-treesitter"))
+			end, 0)
+		end,
 	},
 	{ "numToStr/Comment.nvim", opts = {} },
 	{

@@ -65,10 +65,10 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 })
 
 -- Defer Treesitter setup after first render to improve startup time of 'nvim {filename}'
-vim.defer_fn(function()
-	---@diagnostic disable-next-line: missing-fields
-	require("nvim-treesitter.configs").setup(require("plugins.nvim-treesitter"))
-end, 0)
+-- vim.defer_fn(function()
+-- 	---@diagnostic disable-next-line: missing-fields
+-- 	require("nvim-treesitter.configs").setup(require("plugins.nvim-treesitter"))
+-- end, 0)
 -- require("plugins.lsp-config")
 -- require("plugins.nvim-cmp")
 
