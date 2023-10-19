@@ -1,7 +1,7 @@
 return {
   options = {
-    icons_enabled = false,
-    theme = 'onedark',
+    icons_enabled = true,
+    -- theme = 'material',
     component_separators = '|',
     section_separators = '',
   },

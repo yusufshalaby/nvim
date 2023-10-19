@@ -22,6 +22,10 @@ return {
 			-- Additional lua configuration, makes nvim stuff amazing!
 			"folke/neodev.nvim",
 		},
+		event = { "BufReadPre", "BufNewFile" },
+		config = function()
+			require("plugins.lspconfig")
+		end,
 	},
 	{
 		"romgrk/barbar.nvim",
@@ -116,9 +120,13 @@ return {
 	{
 		"lukas-reineke/indent-blankline.nvim",
 		main = "ibl",
+		event = { "BufReadPre", "BufNewFile" },
 		opts = {},
 	},
-	{ "nvim-lualine/lualine.nvim", opts = require("plugins.lualine") },
+	{
+		"nvim-lualine/lualine.nvim",
+		opts = require("plugins.lualine"),
+	},
 	{
 		"zbirenbaum/copilot.lua",
 		event = "InsertEnter",

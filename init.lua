@@ -69,7 +69,7 @@ vim.defer_fn(function()
 	---@diagnostic disable-next-line: missing-fields
 	require("nvim-treesitter.configs").setup(require("plugins.nvim-treesitter"))
 end, 0)
-require("plugins.lsp-config")
+-- require("plugins.lsp-config")
 -- require("plugins.nvim-cmp")
 
 require("mappings")
