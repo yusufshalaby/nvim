@@ -17,21 +17,7 @@ vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = tr
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
 -- Buffers
-map('n', '<tab>', '<Cmd>BufferNext<CR>', opts)
-map('n', '<S-tab>', '<Cmd>BufferPrevious<CR>', opts)
-map('n', '<A-h>', '<Cmd>BufferMovePrevious<CR>', opts)
-map('n', '<A-l>', '<Cmd>BufferMoveNext<CR>', opts)
-map('n', '<A-1>', '<Cmd>BufferGoto 1<CR>', opts)
-map('n', '<A-2>', '<Cmd>BufferGoto 2<CR>', opts)
-map('n', '<A-3>', '<Cmd>BufferGoto 3<CR>', opts)
-map('n', '<A-4>', '<Cmd>BufferGoto 4<CR>', opts)
-map('n', '<A-5>', '<Cmd>BufferGoto 5<CR>', opts)
-map('n', '<A-6>', '<Cmd>BufferGoto 6<CR>', opts)
-map('n', '<A-7>', '<Cmd>BufferGoto 7<CR>', opts)
-map('n', '<A-8>', '<Cmd>BufferGoto 8<CR>', opts)
-map('n', '<A-9>', '<Cmd>BufferGoto 9<CR>', opts)
 map('n', '<leader>b', '<Cmd>enew<CR>', { unpack(opts), desc = "New buffer" })
-map('n', '<leader>x', '<Cmd>BufferClose<CR>', opts)
 
 -- NvimTree
 map('n', '<C-n>', '<Cmd>NvimTreeToggle<CR>', opts)

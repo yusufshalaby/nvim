@@ -27,20 +27,28 @@ return {
 			require("plugins.lspconfig")
 		end,
 	},
+	-- {
+	-- 	"romgrk/barbar.nvim",
+	-- 	cmd = {
+	-- 		"BufferNext",
+	-- 		"BufferPrevious",
+	-- 		"BufferGoTo",
+	-- 		"BufferClose",
+	-- 	},
+	-- 	dependencies = { "lewis6991/gitsigns.nvim", "nvim-tree/nvim-web-devicons" },
+	-- 	init = function()
+	-- 		vim.g.barbar_auto_setup = false
+	-- 	end,
+	-- 	opts = {},
+	-- 	version = "^1.0.0", -- optional: only update when a new 1.x version is released
+	-- },
 	{
-		"romgrk/barbar.nvim",
-		cmd = {
-			"BufferNext",
-			"BufferPrevious",
-			"BufferGoTo",
-			"BufferClose",
-		},
-		dependencies = { "lewis6991/gitsigns.nvim", "nvim-tree/nvim-web-devicons" },
-		init = function()
-			vim.g.barbar_auto_setup = false
-		end,
+		"ThePrimeagen/harpoon",
+		event = { "BufReadPre", "BufNewFile" },
 		opts = {},
-		version = "^1.0.0", -- optional: only update when a new 1.x version is released
+		config = function()
+			require("plugins.harpoon")
+		end,
 	},
 	{
 		"nvim-tree/nvim-tree.lua",
@@ -48,9 +56,7 @@ return {
 		-- lazy = false,
 		cmd = { "NvimTreeToggle", "NvimTreeOpen" },
 		dependencies = { "nvim-tree/nvim-web-devicons" },
-		config = function()
-			require("nvim-tree").setup({})
-		end,
+		opts = {},
 	},
 	{
 		-- Autocompletion
