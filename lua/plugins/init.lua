@@ -5,6 +5,7 @@ return {
 	"tpope/vim-rhubarb",
 	-- Detect tabstop and shiftwidth automatically
 	"tpope/vim-sleuth",
+	"tpope/vim-surround",
 
 	{
 		-- LSP Configuration & Plugins
