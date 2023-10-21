@@ -43,6 +43,15 @@ vim.wo.number = true
 vim.wo.signcolumn = "yes"
 vim.wo.relativenumber = true
 
+-- for vim-rhubarb to open browser
+vim.api.nvim_create_user_command(
+  'Browse',
+  function (opts)
+    vim.fn.system { 'open', opts.fargs[1] }
+  end,
+  { nargs = 1 }
+)
+
 require("lazy").setup({ require("plugins") }, {})
 
 -- [[ Highlight on yank ]]
