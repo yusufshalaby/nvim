@@ -28,21 +28,19 @@ return {
 			require("plugins.lspconfig")
 		end,
 	},
-	-- {
-	-- 	"romgrk/barbar.nvim",
-	-- 	cmd = {
-	-- 		"BufferNext",
-	-- 		"BufferPrevious",
-	-- 		"BufferGoTo",
-	-- 		"BufferClose",
-	-- 	},
-	-- 	dependencies = { "lewis6991/gitsigns.nvim", "nvim-tree/nvim-web-devicons" },
-	-- 	init = function()
-	-- 		vim.g.barbar_auto_setup = false
-	-- 	end,
-	-- 	opts = {},
-	-- 	version = "^1.0.0", -- optional: only update when a new 1.x version is released
-	-- },
+	{
+		"simrat39/rust-tools.nvim",
+		ft = { "rust" },
+		dependencies = { "neovim/nvim-lspconfig" },
+		config = function()
+			require("rust-tools").setup({
+				server = {
+					on_attach = require("plugins.lspconfig").on_attach,
+					capabilities = require("plugins.lspconfig").capabilities,
+				},
+			})
+		end,
+	},
 	{
 		"ThePrimeagen/harpoon",
 		event = { "BufReadPre", "BufNewFile" },
@@ -166,17 +164,9 @@ return {
 			require("kanagawa").setup({
 				theme = "wave",
 				overrides = function(colors)
-					local theme = colors.theme
 					return {
 						-- Assign a static color to strings
 						CursorLineNr = { fg = colors.palette.carpYellow, italic = false },
-						-- TelescopeTitle = { fg = theme.ui.special, bold = true },
-						-- TelescopePromptNormal = { bg = theme.ui.bg_p1 },
-						-- TelescopePromptBorder = { fg = theme.ui.bg_p1, bg = theme.ui.bg_p1 },
-						-- TelescopeResultsNormal = { fg = theme.ui.fg_dim, bg = theme.ui.bg_m1 },
-						-- TelescopeResultsBorder = { fg = theme.ui.bg_m1, bg = theme.ui.bg_m1 },
-						-- TelescopePreviewNormal = { bg = theme.ui.bg_dim },
-						-- TelescopePreviewBorder = { bg = theme.ui.bg_dim, fg = theme.ui.bg_dim },
 					}
 				end,
 			})
@@ -195,11 +185,4 @@ return {
 	-- 		vim.cmd.colorscheme("tokyonight")
 	-- 	end,
 	-- }
-	-- 	-- Theme inspired by Atom
-	-- 	"navarasu/onedark.nvim",
-	-- 	priority = 1000,
-	-- 	config = function()
-	-- 		vim.cmd.colorscheme("onedark")
-	-- 	end,
-	-- },
 }

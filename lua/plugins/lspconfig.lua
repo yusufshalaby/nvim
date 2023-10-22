@@ -1,3 +1,5 @@
+local M = {}
+
 -- [[ Configure LSP ]]
 --  This function gets run when an LSP connects to a particular buffer.
 local on_attach = function(_, bufnr)
@@ -81,7 +83,7 @@ local servers = {
 			},
 		},
 	},
-	rust_analyzer = {},
+	-- rust_analyzer = {},
 	-- tsserver = {},
 	-- html = { filetypes = { 'html', 'twig', 'hbs'} },
 
@@ -135,3 +137,7 @@ null_ls.setup({
 	sources = sources,
 	on_attach = on_attach,
 })
+
+M.on_attach = on_attach
+M.capabilities = capabilities
+return M
