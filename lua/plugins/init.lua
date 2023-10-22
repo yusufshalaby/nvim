@@ -128,7 +128,18 @@ return {
 			end, 0)
 		end,
 	},
-	{ "numToStr/Comment.nvim", opts = {} },
+	{
+		"numToStr/Comment.nvim",
+		keys = {
+			{ "gcc", mode = "n", desc = "Comment toggle current line" },
+			{ "gc", mode = { "n", "o" }, desc = "Comment toggle linewise" },
+			{ "gc", mode = "x", desc = "Comment toggle linewise (visual)" },
+			{ "gbc", mode = "n", desc = "Comment toggle current block" },
+			{ "gb", mode = { "n", "o" }, desc = "Comment toggle blockwise" },
+			{ "gb", mode = "x", desc = "Comment toggle blockwise (visual)" },
+		},
+		opts = {},
+	},
 	{
 		"lukas-reineke/indent-blankline.nvim",
 		main = "ibl",
@@ -154,6 +165,23 @@ return {
 		opts = {},
 		-- stylua: ignore
 		keys = require("plugins.flash").keys,
+	},
+	{
+		"kristijanhusak/vim-dadbod-ui",
+		dependencies = {
+			{ "tpope/vim-dadbod", lazy = true },
+			{ "kristijanhusak/vim-dadbod-completion", ft = { "sql", "mysql", "plsql" }, lazy = true },
+		},
+		cmd = {
+			"DBUI",
+			"DBUIToggle",
+			"DBUIAddConnection",
+			"DBUIFindBuffer",
+		},
+		init = function()
+			-- Your DBUI configuration
+			vim.g.db_ui_use_nerd_fonts = 1
+		end,
 	},
 	{
 		"rebelot/kanagawa.nvim",
