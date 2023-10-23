@@ -27,7 +27,7 @@ map('n', '<C-n>', '<Cmd>NvimTreeToggle<CR>', opts)
 
 -- telescope
 vim.keymap.set('n', '<leader>fo', "<CMD> Telescope oldfiles <CR>", { desc = '[F]ind recently [o]pened files' })
-vim.keymap.set('n', '<leader>fx', "<CMD> Telescope buffers <CR>", { desc = '[F]ind e[x]xisting buffers' })
+vim.keymap.set('n', '<leader>fb', "<CMD> Telescope buffers <CR>", { desc = '[F]ind exxisting [b]uffers' })
 vim.keymap.set('n', '<leader>fz', "<CMD> Telescope current_buffer_fuzzy_find <CR>", { desc = '[F]u[z]zily search in current buffer' })
 vim.keymap.set('n', '<leader>fg', "<CMD> Telescope git_files <CR>", { desc = '[F]ind [G]it files' })
 vim.keymap.set('n', '<leader>ff', "<CMD> Telescope find_files <CR>", { desc = '[F]ind [F]iles' })
