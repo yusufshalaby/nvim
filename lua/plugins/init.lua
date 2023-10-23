@@ -190,16 +190,7 @@ return {
 		priority = 1000,
 		opts = {},
 		config = function()
-			require("kanagawa").setup({
-				theme = "wave",
-				overrides = function(colors)
-					return {
-						-- Assign a static color to strings
-						CursorLineNr = { fg = colors.palette.carpYellow, italic = false },
-					}
-				end,
-			})
-
+			require("plugins.kanagawa")
 			vim.cmd.colorscheme("kanagawa")
 		end,
 	},
