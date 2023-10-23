@@ -13,12 +13,12 @@ require("kanagawa").setup({
 		palette = {},
 		theme = { wave = {}, lotus = {}, dragon = {}, all = {} },
 	},
-	overrides = function(colors) -- add/modify highlights
-		return {
-			-- Assign a static color to strings
-			-- CursorLineNr = { fg = colors.palette.carpYellow, italic = false },
-		}
-	end,
+	-- overrides = function(colors) -- add/modify highlights
+	-- 	return {
+	-- 		-- Assign a static color to strings
+	-- 		CursorLineNr = { fg = colors.palette.carpYellow, italic = false },
+	-- 	}
+	-- end,
 	theme = "wave", -- Load "wave" theme when 'background' option is not set
 	background = { -- map the value of 'background' option to a theme
 		dark = "wave", -- try "dragon" !

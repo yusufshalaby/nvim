@@ -9,8 +9,8 @@ map(
 )
 map("n", "<leader>m", "<cmd>lua require('harpoon.mark').add_file()<CR>", { unpack(opts), desc = "Add file to Harpoon" })
 
-map("n", "<tab>", "<Cmd> lua require('harpoon.ui').nav_next()<CR>", opts)
-map("n", "<S-tab>", "<Cmd> lua require('harpoon.ui').nav_prev()<CR>", opts)
+map("n", "<A-.>", "<Cmd> lua require('harpoon.ui').nav_next()<CR>", opts)
+map("n", "<A-,>", "<Cmd> lua require('harpoon.ui').nav_prev()<CR>", opts)
 map("n", "<A-1>", "<Cmd> lua require('harpoon.ui').nav_file(1)<CR>", opts)
 map("n", "<A-2>", "<Cmd> lua require('harpoon.ui').nav_file(2)<CR>", opts)
 map("n", "<A-3>", "<Cmd> lua require('harpoon.ui').nav_file(3)<CR>", opts)

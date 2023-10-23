@@ -17,7 +17,10 @@ vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = tr
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
 -- Buffers
+map("n", "<tab>", "<Cmd>bn<CR>", opts)
+map("n", "<S-tab>", "<Cmd>bp<CR>", opts)
 map('n', '<leader>b', '<Cmd>enew<CR>', { unpack(opts), desc = "New buffer" })
+map('n', '<leader>x', '<Cmd>bd<CR>', { unpack(opts), desc = "Delete buffer" })
 
 -- NvimTree
 map('n', '<C-n>', '<Cmd>NvimTreeToggle<CR>', opts)
