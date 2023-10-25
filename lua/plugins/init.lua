@@ -90,7 +90,7 @@ return {
 		},
 		config = require("plugins.nvim-cmp"),
 	},
-	{ "folke/which-key.nvim",    opts = {} },
+	{ "folke/which-key.nvim", opts = {} },
 	{ "lewis6991/gitsigns.nvim", opts = require("plugins.gitsigns") },
 	{
 		"nvim-telescope/telescope.nvim",
@@ -132,12 +132,12 @@ return {
 	{
 		"numToStr/Comment.nvim",
 		keys = {
-			{ "gcc", mode = "n",          desc = "Comment toggle current line" },
-			{ "gc",  mode = { "n", "o" }, desc = "Comment toggle linewise" },
-			{ "gc",  mode = "x",          desc = "Comment toggle linewise (visual)" },
-			{ "gbc", mode = "n",          desc = "Comment toggle current block" },
-			{ "gb",  mode = { "n", "o" }, desc = "Comment toggle blockwise" },
-			{ "gb",  mode = "x",          desc = "Comment toggle blockwise (visual)" },
+			{ "gcc", mode = "n", desc = "Comment toggle current line" },
+			{ "gc", mode = { "n", "o" }, desc = "Comment toggle linewise" },
+			{ "gc", mode = "x", desc = "Comment toggle linewise (visual)" },
+			{ "gbc", mode = "n", desc = "Comment toggle current block" },
+			{ "gb", mode = { "n", "o" }, desc = "Comment toggle blockwise" },
+			{ "gb", mode = "x", desc = "Comment toggle blockwise (visual)" },
 		},
 		opts = {},
 	},
@@ -202,7 +202,16 @@ return {
 			--   `nvim-notify` is only needed, if you want to use the notification view.
 			--   If not available, we use `mini` as the fallback
 			"rcarriga/nvim-notify",
-		}
+		},
+		config = function()
+			require("plugins.noice")
+		end,
+	},
+	{
+		"goolord/alpha-nvim",
+		config = function()
+			require("alpha").setup(require("alpha.themes.startify").config)
+		end,
 	},
 	-- {
 	-- 	"rose-pine/neovim",
