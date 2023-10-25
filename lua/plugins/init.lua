@@ -184,6 +184,34 @@ return {
 			vim.g.db_ui_use_nerd_fonts = 1
 		end,
 	},
+	-- {
+	-- 	"rose-pine/neovim",
+	-- 	lazy = false,
+	-- 	priority = 1000,
+	-- 	name = "rose-pine",
+	-- 	config = function()
+	-- 		require("plugins.rose-pine")
+	-- 	end
+	-- },
+	-- {
+	-- 	"sainnhe/everforest",
+	-- 	lazy = false,
+	-- 	priority = 1000,
+	-- 	config = function()
+	-- 		vim.cmd("let g:everforest_background = 'hard'")
+	-- 		vim.cmd("colorscheme everforest")
+	-- 	end,
+	-- },
+	-- {
+	-- 	"sainnhe/gruvbox-material",
+	-- 	lazy = false,
+	-- 	priority = 1000,
+	-- 	config = function()
+	-- 		vim.cmd("let g:gruvbox_material_background = 'hard'")
+	-- 		vim.cmd("colorscheme gruvbox-material")
+	-- 		vim.cmd("hi CursorLineNr guifg=#d8a657")
+	-- 	end,
+	-- },
 	{
 		"rebelot/kanagawa.nvim",
 		lazy = false,
@@ -191,7 +219,6 @@ return {
 		opts = {},
 		config = function()
 			require("plugins.kanagawa")
-			vim.cmd.colorscheme("kanagawa")
 		end,
 	},
 	-- {
@@ -200,7 +227,7 @@ return {
 	-- 	priority = 1000,
 	-- 	opts = {},
 	-- 	config = function()
-	-- 		require("tokyonight").setup({ style = "storm" })
+	-- 		require("tokyonight").setup({ style = "night" })
 	--
 	-- 		vim.cmd.colorscheme("tokyonight")
 	-- 	end,
