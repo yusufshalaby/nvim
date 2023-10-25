@@ -202,25 +202,25 @@ return {
 	-- 		vim.cmd("colorscheme everforest")
 	-- 	end,
 	-- },
-	-- {
-	-- 	"sainnhe/gruvbox-material",
-	-- 	lazy = false,
-	-- 	priority = 1000,
-	-- 	config = function()
-	-- 		vim.cmd("let g:gruvbox_material_background = 'hard'")
-	-- 		vim.cmd("colorscheme gruvbox-material")
-	-- 		vim.cmd("hi CursorLineNr guifg=#d8a657")
-	-- 	end,
-	-- },
 	{
-		"rebelot/kanagawa.nvim",
+		"sainnhe/gruvbox-material",
 		lazy = false,
 		priority = 1000,
-		opts = {},
 		config = function()
-			require("plugins.kanagawa")
+			vim.cmd("let g:gruvbox_material_background = 'medium'")
+			vim.cmd("colorscheme gruvbox-material")
+			vim.cmd("hi CursorLineNr guifg=#d8a657")
 		end,
 	},
+	-- {
+	-- 	"rebelot/kanagawa.nvim",
+	-- 	lazy = false,
+	-- 	priority = 1000,
+	-- 	opts = {},
+	-- 	config = function()
+	-- 		require("plugins.kanagawa")
+	-- 	end,
+	-- },
 	-- {
 	-- 	"folke/tokyonight.nvim",
 	-- 	lazy = false,
