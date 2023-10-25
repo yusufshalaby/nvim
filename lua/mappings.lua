@@ -39,7 +39,7 @@ vim.keymap.set('n', '<leader>cb', "<CMD> Telescope git_bcommits <CR>", { desc = 
 vim.keymap.set('n', '<leader>gbr', "<CMD> Telescope git_branches <CR>", { desc = '[G]it [BR]anches' })
 
 -- Comment
-vim.keymap.set('n', '<leader>/', function()
+vim.keymap.set({'n', 'v'}, '<leader>/', function()
   require("Comment.api").toggle.linewise.current()
 end, { desc = 'Comment line' })
 
