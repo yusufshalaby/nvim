@@ -127,6 +127,7 @@ local b = null_ls.builtins
 local sources = {
 	b.formatting.prettierd.with({ filetypes = { "html", "markdown", "css", "json", "yaml" } }),
 	b.formatting.stylua,
+	b.formatting.sqlfmt,
 	b.formatting.black,
 	b.formatting.ruff,
 	b.diagnostics.ruff,
