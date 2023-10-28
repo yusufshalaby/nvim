@@ -211,9 +211,28 @@ return {
 	{
 		"goolord/alpha-nvim",
 		config = function()
-			require("alpha").setup(require("alpha.themes.startify").config)
+			require("alpha").setup(require("plugins.alpha").config)
 		end,
 	},
+	-- {
+	-- 	'nvimdev/dashboard-nvim',
+	-- 	event = 'VimEnter',
+	-- 	config = function()
+	-- 		require('dashboard').setup {
+	-- 			-- config
+	-- 		}
+	-- 	end,
+	-- 	dependencies = { { 'nvim-tree/nvim-web-devicons' } }
+	-- },
+	-- {
+	-- 	"catppuccin/nvim",
+	-- 	lazy = false,
+	-- 	name = "catppuccin",
+	-- 	priority = 1000,
+	-- 	config = function()
+	-- 		require("plugins.catppuccin")
+	-- 	end,
+	-- },
 	-- {
 	-- 	"rose-pine/neovim",
 	-- 	lazy = false,
