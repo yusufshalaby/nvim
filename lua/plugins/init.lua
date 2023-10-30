@@ -150,6 +150,7 @@ return {
 	},
 	{
 		"nvim-lualine/lualine.nvim",
+		event = { "BufReadPre", "BufNewFile" },
 		opts = require("plugins.lualine"),
 	},
 	{
@@ -257,6 +258,8 @@ return {
 		priority = 1000,
 		config = function()
 			vim.cmd("let g:gruvbox_material_background = 'medium'")
+			vim.cmd("let g:gruvbox_material_foreground = 'material'")
+			vim.cmd("let g:gruvbox_material_better_performance = 1")
 			vim.cmd("colorscheme gruvbox-material")
 			vim.cmd("hi CursorLineNr guifg=#d8a657")
 		end,
