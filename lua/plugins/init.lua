@@ -190,6 +190,15 @@ return {
 			vim.g.db_ui_use_nerd_fonts = 1
 		end,
 	},
+	{
+		"nvim-treesitter/nvim-treesitter-context",
+		cmd = { "TSContextEnable", "TSContextDisable", "TSContextToggle" },
+		config = function()
+			vim.keymap.set("n", "[p", function()
+				require("treesitter-context").go_to_context()
+			end, { silent = true, desc = "Go to previous context"})
+		end,
+	},
 	-- lazy.nvim
 	-- {
 	-- 	"folke/noice.nvim",
