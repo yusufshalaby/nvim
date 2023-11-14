@@ -196,10 +196,10 @@ return {
 		config = function()
 			vim.keymap.set("n", "[p", function()
 				require("treesitter-context").go_to_context()
-			end, { silent = true, desc = "Go to previous context"})
+			end, { silent = true, desc = "Go to previous context" })
+			vim.keymap.set("n", "<leader>tc", "<CMD>TSContextToggle<CR>", { desc = "Toggle treesitter context" })
 		end,
 	},
-	-- lazy.nvim
 	-- {
 	-- 	"folke/noice.nvim",
 	-- 	event = "VeryLazy",
