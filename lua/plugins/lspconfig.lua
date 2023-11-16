@@ -129,8 +129,9 @@ local sources = {
 	b.formatting.taplo,
 	b.formatting.stylua,
 	b.formatting.sqlfmt,
-	b.formatting.black,
+	-- b.formatting.black,
 	b.formatting.ruff,
+	b.formatting.ruff_format,
 	b.diagnostics.ruff,
 }
 

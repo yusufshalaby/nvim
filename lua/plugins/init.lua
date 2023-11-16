@@ -200,6 +200,14 @@ return {
 			vim.keymap.set("n", "<leader>tc", "<CMD>TSContextToggle<CR>", { desc = "Toggle treesitter context" })
 		end,
 	},
+	{
+		"iamcco/markdown-preview.nvim",
+		ft = "markdown",
+		cmd = { "MarkdownPreview", "MarkdownPreviewStop" },
+		build = function()
+			vim.fn["mkdp#util#install"]()
+		end,
+	},
 	-- {
 	-- 	"folke/noice.nvim",
 	-- 	event = "VeryLazy",
