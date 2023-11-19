@@ -33,7 +33,7 @@ vim.o.breakindent = true
 vim.o.undofile = true
 vim.o.ignorecase = true
 vim.o.smartcase = true
-vim.o.updatetime = 250
+vim.o.updatetime = 50
 vim.o.timeoutlen = 300
 vim.o.completeopt = "menuone,noselect"
 vim.o.termguicolors = true
@@ -54,6 +54,7 @@ vim.api.nvim_create_user_command(
   { nargs = 1 }
 )
 
+require("mappings")
 require("lazy").setup({ require("plugins") }, {})
 
 -- [[ Highlight on yank ]]
@@ -68,7 +69,6 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 })
 
 
-require("mappings")
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et

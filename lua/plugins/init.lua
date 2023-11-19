@@ -196,7 +196,24 @@ return {
 			vim.g.db_ui_use_nerd_fonts = 1
 		end,
 	},
-	-- lazy.nvim
+	{
+		"nvim-treesitter/nvim-treesitter-context",
+		cmd = { "TSContextEnable", "TSContextDisable", "TSContextToggle" },
+		config = function()
+			vim.keymap.set("n", "[p", function()
+				require("treesitter-context").go_to_context()
+			end, { silent = true, desc = "Go to previous context" })
+			vim.keymap.set("n", "<leader>tc", "<CMD>TSContextToggle<CR>", { desc = "Toggle treesitter context" })
+		end,
+	},
+	{
+		"iamcco/markdown-preview.nvim",
+		ft = "markdown",
+		cmd = { "MarkdownPreview", "MarkdownPreviewStop" },
+		build = function()
+			vim.fn["mkdp#util#install"]()
+		end,
+	},
 	-- {
 	-- 	"folke/noice.nvim",
 	-- 	event = "VeryLazy",
