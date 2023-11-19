@@ -35,6 +35,12 @@ return {
 		dependencies = { "neovim/nvim-lspconfig" },
 		config = function()
 			require("rust-tools").setup({
+				tools = {
+					inlay_hints = {
+						auto = true,
+						only_current_line = true,
+					}
+				},
 				server = {
 					on_attach = require("plugins.lspconfig").on_attach,
 					capabilities = require("plugins.lspconfig").capabilities,
@@ -191,24 +197,24 @@ return {
 		end,
 	},
 	-- lazy.nvim
-	{
-		"folke/noice.nvim",
-		event = "VeryLazy",
-		opts = {
-			-- add any options here
-		},
-		dependencies = {
-			-- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
-			"MunifTanjim/nui.nvim",
-			-- OPTIONAL:
-			--   `nvim-notify` is only needed, if you want to use the notification view.
-			--   If not available, we use `mini` as the fallback
-			"rcarriga/nvim-notify",
-		},
-		config = function()
-			require("plugins.noice")
-		end,
-	},
+	-- {
+	-- 	"folke/noice.nvim",
+	-- 	event = "VeryLazy",
+	-- 	opts = {
+	-- 		-- add any options here
+	-- 	},
+	-- 	dependencies = {
+	-- 		-- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+	-- 		"MunifTanjim/nui.nvim",
+	-- 		-- OPTIONAL:
+	-- 		--   `nvim-notify` is only needed, if you want to use the notification view.
+	-- 		--   If not available, we use `mini` as the fallback
+	-- 		"rcarriga/nvim-notify",
+	-- 	},
+	-- 	config = function()
+	-- 		require("plugins.noice")
+	-- 	end,
+	-- },
 	{
 		"goolord/alpha-nvim",
 		config = function()
