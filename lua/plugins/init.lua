@@ -43,6 +43,14 @@ return {
 		end,
 	},
 	{
+		"nvim-neotest/neotest",
+		dependencies = {
+			require("plugins.neotest").dependencies,
+		},
+		config = require("plugins.neotest").config,
+		keys = require("plugins.neotest").keys,
+	},
+	{
 		"ThePrimeagen/harpoon",
 		event = { "BufReadPre", "BufNewFile" },
 		opts = {},
@@ -142,12 +150,28 @@ return {
 		},
 		opts = {},
 	},
+	-- {"HiPhish/rainbow-delimiters.nvim"},
 	{
 		"lukas-reineke/indent-blankline.nvim",
 		main = "ibl",
 		event = { "BufReadPre", "BufNewFile" },
-		opts = {},
+		opts = {
+			indent = {
+				char = "│",
+				tab_char = "│",
+			},
+			scope = { enabled = true },
+		},
 	},
+	-- {
+	-- 	"echasnovski/mini.indentscope",
+	-- 	version = "*",
+	-- 	opts = {
+	-- 		-- symbol = "▏",
+	-- 		symbol = "│",
+	-- 		options = { try_as_border = true },
+	-- 	},
+	-- },
 	{
 		"nvim-lualine/lualine.nvim",
 		event = { "BufReadPre", "BufNewFile" },

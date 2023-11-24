@@ -83,10 +83,7 @@ local servers = {
 			},
 		},
 	},
-	-- rust_analyzer = {},
-	-- tsserver = {},
-	-- html = { filetypes = { 'html', 'twig', 'hbs'} },
-
+	ruff_lsp = {},
 	lua_ls = {
 		Lua = {
 			workspace = { checkThirdParty = false },
@@ -129,10 +126,10 @@ local sources = {
 	b.formatting.taplo,
 	b.formatting.stylua,
 	b.formatting.sqlfmt,
-	-- b.formatting.black,
-	b.formatting.ruff,
-	b.formatting.ruff_format,
-	b.diagnostics.ruff,
+	-- replaced the following with ruff_lsp:
+	-- b.formatting.ruff,
+	-- b.formatting.ruff_format,
+	-- b.diagnostics.ruff,
 }
 
 null_ls.setup({
