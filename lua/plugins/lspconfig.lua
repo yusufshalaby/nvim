@@ -126,6 +126,7 @@ local sources = {
 	b.formatting.taplo,
 	b.formatting.stylua,
 	b.formatting.sqlfmt,
+	b.diagnostics.cfn_lint,
 	-- replaced the following with ruff_lsp:
 	-- b.formatting.ruff,
 	-- b.formatting.ruff_format,
