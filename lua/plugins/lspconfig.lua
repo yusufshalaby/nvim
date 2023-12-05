@@ -90,6 +90,7 @@ local servers = {
 			telemetry = { enable = false },
 		},
 	},
+	taplo = {},
 }
 
 -- Setup neovim lua configuration
@@ -123,7 +124,6 @@ local b = null_ls.builtins
 
 local sources = {
 	b.formatting.prettierd.with({ filetypes = { "html", "markdown", "css", "json", "yaml" } }),
-	b.formatting.taplo,
 	b.formatting.stylua,
 	b.formatting.sqlfmt,
 	b.diagnostics.cfn_lint,
