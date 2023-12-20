@@ -1,10 +1,11 @@
 local M = {}
 
 M.dependencies = {
-	"nvim-neotest/neotest-python",
 	"nvim-lua/plenary.nvim",
 	"antoinemadec/FixCursorHold.nvim",
 	"nvim-treesitter/nvim-treesitter",
+	"nvim-neotest/neotest-python",
+	"rouge8/neotest-rust",
 }
 
 M.config = function()
@@ -15,6 +16,7 @@ M.config = function()
 				-- runner = "pytest",
 				-- python = "venv/bin/python",
 			}),
+			require("neotest-rust"),
 		},
 		status = { virtual_text = true },
 		output = { open_on_run = true },
