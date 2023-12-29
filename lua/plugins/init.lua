@@ -30,22 +30,23 @@ return {
 		end,
 	},
 	{
-		"simrat39/rust-tools.nvim",
+		"mrcjkb/rustaceanvim",
+		version = "^3", -- Recommended
 		ft = { "rust" },
-		dependencies = { "neovim/nvim-lspconfig" },
 		config = function()
-			require("rust-tools").setup({
-				tools = {
-					inlay_hints = {
-						auto = true,
-						only_current_line = true,
-					}
-				},
+			vim.g.rustaceanvim = {
 				server = {
 					on_attach = require("plugins.lspconfig").on_attach,
 					capabilities = require("plugins.lspconfig").capabilities,
+					settings = {
+						["rust-analyzer"] = {
+							check = {
+								command = "clippy",
+							},
+						},
+					},
 				},
-			})
+			}
 		end,
 	},
 	{
