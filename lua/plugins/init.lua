@@ -1,9 +1,6 @@
 return {
-	-- NOTE: First, some plugins that don't require any configuration
-	-- Git related plugins
 	"tpope/vim-fugitive",
 	"tpope/vim-rhubarb",
-	-- Detect tabstop and shiftwidth automatically
 	"tpope/vim-sleuth",
 	"tpope/vim-surround",
 
@@ -11,17 +8,11 @@ return {
 		-- LSP Configuration & Plugins
 		"neovim/nvim-lspconfig",
 		dependencies = {
-			-- Automatically install LSPs to stdpath for neovim
 			"williamboman/mason.nvim",
 			"williamboman/mason-lspconfig.nvim",
-			-- "jose-elias-alvarez/null-ls.nvim",
 			"nvimtools/none-ls.nvim",
-
-			-- Useful status updates for LSP
 			-- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
 			{ "j-hui/fidget.nvim", tag = "legacy", opts = {} },
-
-			-- Additional lua configuration, makes nvim stuff amazing!
 			"folke/neodev.nvim",
 		},
 		event = { "BufReadPre", "BufNewFile" },
@@ -114,13 +105,8 @@ return {
 		cmd = "Telescope",
 		dependencies = {
 			"nvim-lua/plenary.nvim",
-			-- Fuzzy Finder Algorithm which requires local dependencies to be built.
-			-- Only load if `make` is available. Make sure you have the system
-			-- requirements installed.
 			{
 				"nvim-telescope/telescope-fzf-native.nvim",
-				-- NOTE: If you are having trouble with this installation,
-				--       refer to the README for telescope-fzf-native for more instructions.
 				build = "make",
 				cond = function()
 					return vim.fn.executable("make") == 1
@@ -131,7 +117,6 @@ return {
 	},
 
 	{
-		-- Highlight, edit, and navigate code
 		"nvim-treesitter/nvim-treesitter",
 		dependencies = {
 			"nvim-treesitter/nvim-treesitter-textobjects",
@@ -157,7 +142,6 @@ return {
 		},
 		opts = {},
 	},
-	-- {"HiPhish/rainbow-delimiters.nvim"},
 	{
 		"lukas-reineke/indent-blankline.nvim",
 		main = "ibl",
@@ -170,15 +154,6 @@ return {
 			scope = { enabled = true },
 		},
 	},
-	-- {
-	-- 	"echasnovski/mini.indentscope",
-	-- 	version = "*",
-	-- 	opts = {
-	-- 		-- symbol = "▏",
-	-- 		symbol = "│",
-	-- 		options = { try_as_border = true },
-	-- 	},
-	-- },
 	{
 		"nvim-lualine/lualine.nvim",
 		event = { "BufReadPre", "BufNewFile" },
@@ -239,40 +214,17 @@ return {
 			vim.fn["mkdp#util#install"]()
 		end,
 	},
-	-- {
-	-- 	"folke/noice.nvim",
-	-- 	event = "VeryLazy",
-	-- 	opts = {
-	-- 		-- add any options here
-	-- 	},
-	-- 	dependencies = {
-	-- 		-- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
-	-- 		"MunifTanjim/nui.nvim",
-	-- 		-- OPTIONAL:
-	-- 		--   `nvim-notify` is only needed, if you want to use the notification view.
-	-- 		--   If not available, we use `mini` as the fallback
-	-- 		"rcarriga/nvim-notify",
-	-- 	},
-	-- 	config = function()
-	-- 		require("plugins.noice")
-	-- 	end,
-	-- },
+	{
+		"folke/trouble.nvim",
+		dependencies = { "nvim-tree/nvim-web-devicons" },
+		opts = {},
+	},
 	{
 		"goolord/alpha-nvim",
 		config = function()
 			require("alpha").setup(require("plugins.alpha").config)
 		end,
 	},
-	-- {
-	-- 	'nvimdev/dashboard-nvim',
-	-- 	event = 'VimEnter',
-	-- 	config = function()
-	-- 		require('dashboard').setup {
-	-- 			-- config
-	-- 		}
-	-- 	end,
-	-- 	dependencies = { { 'nvim-tree/nvim-web-devicons' } }
-	-- },
 	-- {
 	-- 	"catppuccin/nvim",
 	-- 	lazy = false,
