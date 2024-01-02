@@ -171,7 +171,13 @@ return {
 		"folke/flash.nvim",
 		event = "VeryLazy",
 		---@type Flash.Config
-		opts = {},
+		opts = {
+			modes = {
+				char = {
+					enabled = false,
+				},
+			},
+		},
 		-- stylua: ignore
 		keys = require("plugins.flash").keys,
 	},
