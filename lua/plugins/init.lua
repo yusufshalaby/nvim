@@ -56,14 +56,14 @@ return {
 			require("plugins.harpoon")
 		end,
 	},
-	{
-		"nvim-tree/nvim-tree.lua",
-		version = "*",
-		-- lazy = false,
-		cmd = { "NvimTreeToggle", "NvimTreeOpen" },
-		dependencies = { "nvim-tree/nvim-web-devicons" },
-		opts = {},
-	},
+	-- {
+	-- 	"nvim-tree/nvim-tree.lua",
+	-- 	version = "*",
+	-- 	-- lazy = false,
+	-- 	cmd = { "NvimTreeToggle", "NvimTreeOpen" },
+	-- 	dependencies = { "nvim-tree/nvim-web-devicons" },
+	-- 	opts = {},
+	-- },
 	{
 		-- Autocompletion
 		"hrsh7th/nvim-cmp",
@@ -256,6 +256,13 @@ return {
 				endfunction
 				]])
 		end,
+	},
+	{
+		"stevearc/oil.nvim",
+		opts = {},
+		-- Optional dependencies
+		cmd = { "Oil" },
+		dependencies = { "nvim-tree/nvim-web-devicons" },
 	},
 	-- {
 	-- 	"catppuccin/nvim",

@@ -23,7 +23,7 @@ map("n", "<leader>b", "<Cmd>enew<CR>", { unpack(opts), desc = "New buffer" })
 map("n", "<leader>x", "<Cmd>bd<CR>", { unpack(opts), desc = "Delete buffer" })
 
 -- NvimTree
-map("n", "<C-n>", "<Cmd>NvimTreeToggle<CR>", opts)
+map("n", "<C-n>", "<Cmd>Oil<CR>", opts)
 
 -- telescope
 vim.keymap.set("n", "<leader>fo", "<CMD> Telescope oldfiles <CR>", { desc = "[F]ind recently [o]pened files" })
