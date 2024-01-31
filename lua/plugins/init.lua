@@ -3,7 +3,6 @@ return {
 	"tpope/vim-rhubarb",
 	"tpope/vim-sleuth",
 	"tpope/vim-surround",
-	"mbbill/undotree",
 	{
 		-- LSP Configuration & Plugins
 		"neovim/nvim-lspconfig",
@@ -56,14 +55,6 @@ return {
 			require("plugins.harpoon")
 		end,
 	},
-	-- {
-	-- 	"nvim-tree/nvim-tree.lua",
-	-- 	version = "*",
-	-- 	-- lazy = false,
-	-- 	cmd = { "NvimTreeToggle", "NvimTreeOpen" },
-	-- 	dependencies = { "nvim-tree/nvim-web-devicons" },
-	-- 	opts = {},
-	-- },
 	{
 		-- Autocompletion
 		"hrsh7th/nvim-cmp",
@@ -102,7 +93,8 @@ return {
 	{
 		"nvim-telescope/telescope.nvim",
 		branch = "0.1.x",
-		cmd = "Telescope",
+		-- cmd = "Telescope",
+		keys = require("plugins.telescope").keys,
 		dependencies = {
 			"nvim-lua/plenary.nvim",
 			{
@@ -113,9 +105,8 @@ return {
 				end,
 			},
 		},
-		config = require("plugins.telescope"),
+		config = require("plugins.telescope").config,
 	},
-
 	{
 		"nvim-treesitter/nvim-treesitter",
 		dependencies = {
@@ -139,6 +130,14 @@ return {
 			{ "gbc", mode = "n", desc = "Comment toggle current block" },
 			{ "gb", mode = { "n", "o" }, desc = "Comment toggle blockwise" },
 			{ "gb", mode = "x", desc = "Comment toggle blockwise (visual)" },
+			{
+				"<leader>/",
+				mode = { "n", "v" },
+				function()
+					require("Comment.api").toggle.linewise.current()
+				end,
+				desc = "Comment toggle current line",
+			},
 		},
 		opts = {},
 	},
@@ -204,7 +203,10 @@ return {
 	},
 	{
 		"nvim-treesitter/nvim-treesitter-context",
-		cmd = { "TSContextEnable", "TSContextDisable", "TSContextToggle" },
+		-- cmd = { "TSContextEnable", "TSContextDisable", "TSContextToggle" },
+		keys = {
+			{ "<leader>tc", "<CMD>TSContextEnable<CR>", { desc = "Toggle treesitter context" } },
+		},
 		config = function()
 			vim.keymap.set("n", "[p", function()
 				require("treesitter-context").go_to_context()
@@ -259,42 +261,23 @@ return {
 	},
 	{
 		"stevearc/oil.nvim",
+		keys = {
+			{ "<C-n>", "<CMD>Oil<CR>", { desc = "Open oil" } },
+		},
 		opts = {
 			keymaps = {
 				["<C-n>"] = "actions.close",
 			},
 		},
 		-- Optional dependencies
-		cmd = { "Oil" },
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 	},
-	-- {
-	-- 	"catppuccin/nvim",
-	-- 	lazy = false,
-	-- 	name = "catppuccin",
-	-- 	priority = 1000,
-	-- 	config = function()
-	-- 		require("plugins.catppuccin")
-	-- 	end,
-	-- },
-	-- {
-	-- 	"rose-pine/neovim",
-	-- 	lazy = false,
-	-- 	priority = 1000,
-	-- 	name = "rose-pine",
-	-- 	config = function()
-	-- 		require("plugins.rose-pine")
-	-- 	end
-	-- },
-	-- {
-	-- 	"sainnhe/everforest",
-	-- 	lazy = false,
-	-- 	priority = 1000,
-	-- 	config = function()
-	-- 		vim.cmd("let g:everforest_background = 'hard'")
-	-- 		vim.cmd("colorscheme everforest")
-	-- 	end,
-	-- },
+	{
+		"mbbill/undotree",
+		keys = {
+			{ "<leader>u", "<CMD>UndotreeToggle<CR>", { desc = "Toggle undotree" } },
+		},
+	},
 	{
 		"sainnhe/gruvbox-material",
 		lazy = false,
@@ -307,24 +290,4 @@ return {
 			vim.cmd("hi CursorLineNr guifg=#d8a657")
 		end,
 	},
-	-- {
-	-- 	"rebelot/kanagawa.nvim",
-	-- 	lazy = false,
-	-- 	priority = 1000,
-	-- 	opts = {},
-	-- 	config = function()
-	-- 		require("plugins.kanagawa")
-	-- 	end,
-	-- },
-	-- {
-	-- 	"folke/tokyonight.nvim",
-	-- 	lazy = false,
-	-- 	priority = 1000,
-	-- 	opts = {},
-	-- 	config = function()
-	-- 		require("tokyonight").setup({ style = "night" })
-	--
-	-- 		vim.cmd.colorscheme("tokyonight")
-	-- 	end,
-	-- }
 }
