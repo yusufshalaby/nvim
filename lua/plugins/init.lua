@@ -259,7 +259,11 @@ return {
 	},
 	{
 		"stevearc/oil.nvim",
-		opts = {},
+		opts = {
+			keymaps = {
+				["<C-n>"] = "actions.close",
+			},
+		},
 		-- Optional dependencies
 		cmd = { "Oil" },
 		dependencies = { "nvim-tree/nvim-web-devicons" },

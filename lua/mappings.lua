@@ -22,7 +22,7 @@ map("n", "<S-tab>", "<Cmd>bp<CR>", opts)
 map("n", "<leader>b", "<Cmd>enew<CR>", { unpack(opts), desc = "New buffer" })
 map("n", "<leader>x", "<Cmd>bd<CR>", { unpack(opts), desc = "Delete buffer" })
 
--- NvimTree
+-- Oil
 map("n", "<C-n>", "<Cmd>Oil<CR>", opts)
 
 -- telescope
