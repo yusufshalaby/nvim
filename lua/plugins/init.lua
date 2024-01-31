@@ -203,10 +203,7 @@ return {
 	},
 	{
 		"nvim-treesitter/nvim-treesitter-context",
-		-- cmd = { "TSContextEnable", "TSContextDisable", "TSContextToggle" },
-		keys = {
-			{ "<leader>tc", "<CMD>TSContextEnable<CR>", { desc = "Toggle treesitter context" } },
-		},
+		cmd = { "TSContextEnable", "TSContextDisable", "TSContextToggle" },
 		config = function()
 			vim.keymap.set("n", "[p", function()
 				require("treesitter-context").go_to_context()
