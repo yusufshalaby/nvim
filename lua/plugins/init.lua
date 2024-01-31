@@ -3,7 +3,7 @@ return {
 	"tpope/vim-rhubarb",
 	"tpope/vim-sleuth",
 	"tpope/vim-surround",
-
+	"mbbill/undotree",
 	{
 		-- LSP Configuration & Plugins
 		"neovim/nvim-lspconfig",
