@@ -101,17 +101,9 @@ M.keys = {
 		"<leader>fc",
 		mode = { "n" },
 		function()
-			require("telescope.builtin").git_bcommits()
+			require("telescope.builtin").git_status()
 		end,
-		desc = "[F]ind git [C]ommits for the buffer",
-	},
-	{
-		"<leader>fC",
-		mode = { "n" },
-		function()
-			require("telescope.builtin").git_branches()
-		end,
-		desc = "[G]it [BR]anches",
+		desc = "[F]ind git changes in the project",
 	},
 }
 
