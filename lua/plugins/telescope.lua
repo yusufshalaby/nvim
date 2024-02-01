@@ -96,7 +96,7 @@ M.config = function()
 	telescope.setup({
 		pickers = {
 			find_files = {
-				find_command = { "rg", "--files", "--hidden", "-g", "!.git" },
+				find_command = { "rg", "--files", "--hidden", "--no-ignore", "-g", "!.git", "-g", "!venv" },
 			},
 		},
 		defaults = {
