@@ -42,6 +42,8 @@ M.keys = {
 					"fd",
 					"--type",
 					"f",
+					"--color",
+					"never",
 					"--hidden",
 					"--no-ignore",
 					"--exclude",
@@ -60,7 +62,16 @@ M.keys = {
 		mode = { "n" },
 		function()
 			require("telescope.builtin").find_files({
-				find_command = { "fd", "--type", "f", "--hidden", "--exclude", ".git" },
+				find_command = {
+					"fd",
+					"--type",
+					"f",
+					"--color",
+					"never",
+					"--hidden",
+					"--exclude",
+					".git",
+				},
 			})
 		end,
 		desc = "[F]ind [F]iles",
