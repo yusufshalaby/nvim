@@ -235,6 +235,7 @@ return {
 		keys = {
 			{ "<C-n>", "<CMD>Oil<CR>", { desc = "Open oil" } },
 		},
+		event = {"Syntax"},
 		opts = {
 			keymaps = {
 				["<C-n>"] = "actions.close",
