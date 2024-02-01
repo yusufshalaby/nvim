@@ -34,10 +34,32 @@ M.keys = {
 		desc = "[F]ind [G]it files",
 	},
 	{
+		"<leader>fa",
+		mode = { "n" },
+		function()
+			require("telescope.builtin").find_files({
+				find_command = {
+					"fd",
+					"--type",
+					"f",
+					"--hidden",
+					"--no-ignore",
+					"--exclude",
+					".git",
+					"--exclude",
+					"venv",
+					"--exclude",
+					"build",
+				},
+			})
+		end,
+		desc = "[F]ind [A]ll files",
+	},
+	{
 		"<leader>ff",
 		mode = { "n" },
 		function()
-			require("telescope.builtin").find_files()
+			require("telescope.builtin").find_files({ find_command = { "fd", "--type", "f" } })
 		end,
 		desc = "[F]ind [F]iles",
 	},
@@ -94,11 +116,6 @@ M.keys = {
 M.config = function()
 	local telescope = require("telescope")
 	telescope.setup({
-		pickers = {
-			find_files = {
-				find_command = { "rg", "--files", "--hidden", "--no-ignore", "-g", "!.git", "-g", "!venv" },
-			},
-		},
 		defaults = {
 			mappings = {
 				i = {
