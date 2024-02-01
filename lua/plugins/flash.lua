@@ -2,7 +2,7 @@ local M = {}
 
 M.keys = {
 	{
-		"s",
+		"<leader>s",
 		mode = { "n", "o", "x" },
 		function()
 			require("flash").jump()
@@ -32,14 +32,6 @@ M.keys = {
 			require("flash").treesitter_search()
 		end,
 		desc = "Treesitter Search",
-	},
-	{
-		"<c-s>",
-		mode = { "c" },
-		function()
-			require("flash").toggle()
-		end,
-		desc = "Toggle Flash Search",
 	},
 }
 
