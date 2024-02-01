@@ -15,7 +15,7 @@ map("n", "<C-k>", "<C-w>k", { unpack(opts), desc = "Window up" })
 map("n", "<Esc>", "<Cmd>noh<CR>", { unpack(opts), desc = "Clear highlights" })
 vim.keymap.set("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 vim.keymap.set("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
-vim.keymap.set("n", "<leader><leader>", ":", { desc = "Command prompt" })
+vim.keymap.set("n", "<leader><leader>", ":", { noremap = true, desc = "Command prompt" })
 
 -- Buffers
 map("n", "<tab>", "<Cmd>bn<CR>", opts)
