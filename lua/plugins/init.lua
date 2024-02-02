@@ -67,7 +67,7 @@ return {
 	{
 		"nvim-telescope/telescope.nvim",
 		branch = "0.1.x",
-		-- cmd = "Telescope",
+		cmd = "Telescope",
 		keys = require("plugins.telescope").keys,
 		dependencies = {
 			"nvim-lua/plenary.nvim",
