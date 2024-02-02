@@ -82,8 +82,7 @@ M.config = function()
 			fields = { "abbr", "kind", "menu" },
 			expandable_indicator = false,
 			format = function(entry, vim_item)
-				vim_item.kind = require("lspkind").presets.default[vim_item.kind] .. " " .. vim_item
-				.kind
+				vim_item.kind = require("lspkind").presets.default[vim_item.kind] .. " " .. vim_item.kind
 				vim_item.menu = ({
 					nvim_lsp = "[LSP]",
 					luasnip = "[LuaSnip]",
@@ -93,7 +92,7 @@ M.config = function()
 				})[entry.source.name]
 				return vim_item
 			end,
-		}
+		},
 	})
 end
 
