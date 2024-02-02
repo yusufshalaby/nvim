@@ -26,6 +26,7 @@ M.dependencies = {
 			require("cmp").event:on("confirm_done", cmp_autopairs.on_confirm_done())
 		end,
 	},
+	"onsails/lspkind-nvim",
 }
 
 M.config = function()
@@ -77,6 +78,22 @@ M.config = function()
 			{ name = "buffer" },
 			{ name = "nvim_lua" },
 		},
+		formatting = {
+			fields = { "abbr", "kind", "menu" },
+			expandable_indicator = false,
+			format = function(entry, vim_item)
+				vim_item.kind = require("lspkind").presets.default[vim_item.kind] .. " " .. vim_item
+				.kind
+				vim_item.menu = ({
+					nvim_lsp = "[LSP]",
+					luasnip = "[LuaSnip]",
+					buffer = "[Buffer]",
+					path = "[Path]",
+					nvim_lua = "[Lua]",
+				})[entry.source.name]
+				return vim_item
+			end,
+		}
 	})
 end
 
