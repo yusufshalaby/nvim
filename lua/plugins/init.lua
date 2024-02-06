@@ -239,6 +239,13 @@ return {
 		opts = {
 			keymaps = {
 				["<C-n>"] = "actions.close",
+				["H"] = "actions.toggle_hidden",
+			},
+			columns = {
+				"icon",
+				-- "permissions",
+				"size",
+				-- "mtime",
 			},
 		},
 		-- Optional dependencies
@@ -260,6 +267,17 @@ return {
 			vim.cmd("let g:gruvbox_material_better_performance = 1")
 			vim.cmd("colorscheme gruvbox-material")
 			vim.cmd("hi CursorLineNr guifg=#d8a657")
+		end,
+	},
+	{
+		"tamton-aquib/duck.nvim",
+		config = function()
+			vim.keymap.set("n", "<leader>dd", function()
+				require("duck").hatch()
+			end, {})
+			vim.keymap.set("n", "<leader>dk", function()
+				require("duck").cook()
+			end, {})
 		end,
 	},
 }
