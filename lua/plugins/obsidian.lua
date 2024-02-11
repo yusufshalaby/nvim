@@ -11,11 +11,21 @@ return {
 			path = "/Users/yusufshalaby/Library/Mobile Documents/iCloud~md~obsidian/Documents/notes",
 		},
 		{
-			name = "work",
-			path = "~/vaults/work",
-			-- Optional, override certain settings.
+			name = "no-vault",
+			path = function()
+				-- alternatively use the CWD:
+				-- return assert(vim.fn.getcwd())
+				return assert(vim.fs.dirname(vim.api.nvim_buf_get_name(0)))
+			end,
 			overrides = {
-				notes_subdir = "notes",
+				notes_subdir = vim.NIL, -- have to use 'vim.NIL' instead of 'nil'
+				completion = {
+					new_notes_location = "current_dir",
+				},
+				templates = {
+					subdir = vim.NIL,
+				},
+				disable_frontmatter = true,
 			},
 		},
 	},
