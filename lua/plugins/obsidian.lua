@@ -11,6 +11,10 @@ return {
 			path = "/Users/yusufshalaby/Library/Mobile Documents/iCloud~md~obsidian/Documents/notes",
 		},
 		{
+			name = "work",
+			path = "/Users/yusufshalaby/notes",
+		},
+		{
 			name = "no-vault",
 			path = function()
 				-- alternatively use the CWD:
