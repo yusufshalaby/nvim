@@ -5,7 +5,7 @@ M.keys = {
 		"<leader>fo",
 		mode = { "n" },
 		function()
-			require("telescope.builtin").oldfiles()
+			require("telescope.builtin").oldfiles({only_cwd = true})
 		end,
 		desc = "[F]ind recently [o]pened files",
 	},
