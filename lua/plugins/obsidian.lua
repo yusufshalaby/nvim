@@ -23,9 +23,7 @@ return {
 			end,
 			overrides = {
 				notes_subdir = vim.NIL, -- have to use 'vim.NIL' instead of 'nil'
-				completion = {
-					new_notes_location = "current_dir",
-				},
+				new_notes_location = "current_dir",
 				templates = {
 					subdir = vim.NIL,
 				},
