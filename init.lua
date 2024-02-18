@@ -46,13 +46,9 @@ vim.wo.signcolumn = "yes"
 vim.wo.relativenumber = true
 
 -- for vim-rhubarb to open browser
-vim.api.nvim_create_user_command(
-  'Browse',
-  function (opts)
-    vim.fn.system { 'open', opts.fargs[1] }
-  end,
-  { nargs = 1 }
-)
+vim.api.nvim_create_user_command("Browse", function(opts)
+	vim.fn.system({ "open", opts.fargs[1] })
+end, { nargs = 1 })
 
 require("mappings")
 require("lazy").setup({ require("plugins") }, {})
@@ -68,7 +64,8 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 	pattern = "*",
 })
 
-
+-- for neovide
+vim.opt.guifont = { "JetBrains Mono", ":h18" }
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
