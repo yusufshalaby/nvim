@@ -294,4 +294,13 @@ return {
 		},
 		opts = require("plugins.obsidian"),
 	},
+	{
+		"preservim/vim-pencil",
+		cmd = { "Pencil", "PencilSoft", "PencilHard", "TogglePencil" },
+	},
+	{
+		"folke/zen-mode.nvim",
+		cmd = { "ZenMode" },
+		opts = require("plugins.zen-mode"),
+	},
 }
