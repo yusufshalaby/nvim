@@ -297,6 +297,9 @@ return {
 	{
 		"preservim/vim-pencil",
 		cmd = { "Pencil", "PencilSoft", "PencilHard", "TogglePencil" },
+		config = function()
+			vim.cmd([[let g:pencil#conceallevel = 2]])
+		end,
 	},
 	{
 		"folke/zen-mode.nvim",
