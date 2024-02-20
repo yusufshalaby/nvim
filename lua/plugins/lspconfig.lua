@@ -86,6 +86,7 @@ local servers = {
 	ruff_lsp = {},
 	lua_ls = {}, -- TJ Devries lua lsp setup: https://github.com/neovim/neovim/issues/21686#issuecomment-1522446128
 	taplo = {},
+	marksman = {},
 }
 
 -- Setup neovim lua configuration
