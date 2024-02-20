@@ -304,6 +304,7 @@ return {
 	},
 	{
 		"preservim/vim-pencil",
+		enabled = false,
 		cmd = { "Pencil", "PencilSoft", "PencilHard", "TogglePencil" },
 		config = function()
 			vim.cmd([[let g:pencil#conceallevel = 2]])
