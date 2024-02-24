@@ -315,4 +315,10 @@ return {
 		cmd = { "ZenMode" },
 		opts = require("plugins.zen-mode"),
 	},
+	{
+		"ellisonleao/carbon-now.nvim",
+		lazy = true,
+		cmd = "CarbonNow",
+		opts = require("plugins.carbon-now"),
+	},
 }
