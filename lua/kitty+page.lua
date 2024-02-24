@@ -1,3 +1,4 @@
+-- https://github.com/kovidgoyal/kitty/issues/719#issuecomment-1721699211
 local setup = function()
 	local nlines = vim.fn.getenv("INPUT_LINE_NUMBER")
 	local cur_line = vim.fn.getenv("CURSOR_LINE")
