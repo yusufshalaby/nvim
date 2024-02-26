@@ -16,6 +16,8 @@ local setup = function()
 	vim.opt.laststatus = 0
 	vim.opt.showcmd = false
 	vim.opt.scrollback = 1000
+	-- use the visual color matching the current colorscheme
+	vim.cmd("hi Visual guibg=#45403d")
 	local term_buf = vim.api.nvim_create_buf(true, false)
 	local term_io = vim.api.nvim_open_term(term_buf, {})
 	vim.api.nvim_buf_set_keymap(term_buf, "n", "q", "<Cmd>q<CR>", {})
@@ -45,6 +47,16 @@ local setup = function()
 			end
 			vim.api.nvim_buf_delete(ev.buf, { force = true })
 		end,
+	})
+	-- [[ Highlight on yank ]]
+	-- See `:help vim.highlight.on_yank()`
+	local highlight_group = vim.api.nvim_create_augroup("YankHighlight", { clear = true })
+	vim.api.nvim_create_autocmd("TextYankPost", {
+		callback = function()
+			vim.highlight.on_yank()
+		end,
+		group = highlight_group,
+		pattern = "*",
 	})
 end
 setup()
