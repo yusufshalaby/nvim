@@ -265,6 +265,7 @@ return {
 	},
 	{
 		"sainnhe/gruvbox-material",
+		enabled = false,
 		lazy = false,
 		priority = 1000,
 		config = function()
@@ -275,6 +276,13 @@ return {
 			vim.cmd("colorscheme gruvbox-material")
 			vim.cmd("hi CursorLineNr guifg=#d8a657")
 			vim.cmd("hi @markup cterm=italic gui=italic")
+		end,
+	},
+	{
+		"pappasam/papercolor-theme-slim",
+		enabled = true,
+		config = function()
+			vim.cmd("colorscheme PaperColorSlim")
 		end,
 	},
 	{
