@@ -265,7 +265,7 @@ return {
 	},
 	{
 		"sainnhe/gruvbox-material",
-		enabled = false,
+		enabled = true,
 		lazy = false,
 		priority = 1000,
 		config = function()
@@ -280,7 +280,7 @@ return {
 	},
 	{
 		"pappasam/papercolor-theme-slim",
-		enabled = true,
+		enabled = false,
 		config = function()
 			vim.cmd("colorscheme PaperColorSlim")
 		end,
