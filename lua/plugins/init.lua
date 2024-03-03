@@ -275,7 +275,7 @@ return {
 			vim.cmd("let g:gruvbox_material_float_style = 'dim'")
 			vim.cmd("colorscheme gruvbox-material")
 			vim.cmd("hi CursorLineNr guifg=#d8a657")
-			vim.cmd("hi @markup cterm=italic gui=italic")
+			vim.cmd("hi @markup.italic.markdown_inline cterm=italic gui=italic")
 		end,
 	},
 	{
@@ -284,6 +284,21 @@ return {
 		config = function()
 			vim.cmd("colorscheme PaperColorSlim")
 		end,
+	},
+	{
+		"folke/tokyonight.nvim",
+		enabled = false,
+		lazy = false,
+		priority = 1000,
+		config = function()
+			require("plugins.tokyonight")
+			vim.cmd("colorscheme tokyonight")
+			vim.cmd("hi CursorLineNr guifg=#ffc777")
+			vim.cmd("hi @markup.italic.markdown_inline cterm=italic gui=italic")
+		end,
+		-- config = function()
+		-- 	vim.cmd("colorscheme tokyonight")
+		-- end,
 	},
 	{
 		"tamton-aquib/duck.nvim",
