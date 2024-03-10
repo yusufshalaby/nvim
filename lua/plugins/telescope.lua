@@ -25,7 +25,10 @@ M.keys = {
 		"<leader>fz",
 		mode = { "n" },
 		function()
-			require("telescope.builtin").current_buffer_fuzzy_find()
+			require("telescope.builtin").current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
+				winblend = 0,
+				previewer = false,
+			}))
 		end,
 		desc = "[F]u[z]zily search in current buffer",
 	},
