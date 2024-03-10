@@ -344,4 +344,5 @@ return {
 		cmd = "CarbonNow",
 		opts = require("plugins.carbon-now"),
 	},
+	{ "mechatroner/rainbow_csv", ft = "csv" },
 }
