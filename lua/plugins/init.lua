@@ -344,5 +344,15 @@ return {
 		cmd = "CarbonNow",
 		opts = require("plugins.carbon-now"),
 	},
-	{ "mechatroner/rainbow_csv", ft = "csv" },
+	{
+		"cameron-wags/rainbow_csv.nvim",
+		enabled = true,
+		config = function()
+			require("rainbow_csv").setup()
+			vim.cmd(
+				"let g:rcsv_colorlinks = ['RainbowLevel0', 'RainbowLevel1','RainbowLevel2','RainbowLevel3','RainbowLevel4','RainbowLevel5','RainbowLevel6','RainbowLevel7','RainbowLevel8','RainbowLevel9']"
+			)
+		end,
+		ft = "csv",
+	},
 }
