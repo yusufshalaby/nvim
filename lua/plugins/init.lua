@@ -3,6 +3,7 @@ return {
 	"tpope/vim-rhubarb",
 	"tpope/vim-sleuth",
 	"tpope/vim-surround",
+	"knubie/vim-kitty-navigator",
 	{
 		-- LSP Configuration & Plugins
 		"neovim/nvim-lspconfig",
