@@ -66,7 +66,7 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 
 -- for neovide
 vim.opt.guifont = { "JetBrains Mono", ":h18" }
-vim.g.neovide_input_macos_alt_is_meta = true
+vim.g.neovide_input_macos_option_key_is_meta = true
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
