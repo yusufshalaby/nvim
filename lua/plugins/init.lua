@@ -268,7 +268,7 @@ return {
 	},
 	{
 		"sainnhe/gruvbox-material",
-		enabled = true,
+		enabled = false,
 		lazy = false,
 		priority = 1000,
 		config = function()
@@ -282,10 +282,14 @@ return {
 		end,
 	},
 	{
-		"pappasam/papercolor-theme-slim",
-		enabled = false,
+		"sainnhe/everforest",
+		enabled = true,
 		config = function()
-			vim.cmd("colorscheme PaperColorSlim")
+			vim.cmd("let g:everforest_background = 'medium'")
+			vim.cmd("let g:everforest_foreground = 'material'")
+			vim.cmd("let g:everforest_better_performance = 1")
+			vim.cmd("let g:everforest_float_style = 'dim'")
+			vim.cmd("colorscheme everforest")
 		end,
 	},
 	{
