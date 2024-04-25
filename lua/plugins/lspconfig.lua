@@ -127,7 +127,7 @@ local sources = {
 		-- extra_args = { "--prose-wrap", "always" },
 	}),
 	b.formatting.stylua,
-	b.formatting.sqlfmt,
+	b.formatting.sqlfluff,
 	b.diagnostics.cfn_lint,
 	-- replaced the following with ruff_lsp:
 	-- b.formatting.ruff,
