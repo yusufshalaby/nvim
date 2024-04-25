@@ -333,14 +333,6 @@ return {
 		opts = require("plugins.obsidian"),
 	},
 	{
-		"preservim/vim-pencil",
-		enabled = false,
-		cmd = { "Pencil", "PencilSoft", "PencilHard", "TogglePencil" },
-		config = function()
-			vim.cmd([[let g:pencil#conceallevel = 2]])
-		end,
-	},
-	{
 		"folke/zen-mode.nvim",
 		cmd = { "ZenMode" },
 		opts = require("plugins.zen-mode"),
