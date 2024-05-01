@@ -286,7 +286,6 @@ return {
 		enabled = true,
 		config = function()
 			vim.cmd("let g:everforest_background = 'medium'")
-			vim.cmd("let g:everforest_foreground = 'material'")
 			vim.cmd("let g:everforest_better_performance = 1")
 			vim.cmd("let g:everforest_float_style = 'dim'")
 			vim.cmd("colorscheme everforest")
