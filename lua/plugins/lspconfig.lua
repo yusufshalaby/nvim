@@ -29,7 +29,7 @@ local on_attach = function(_, bufnr)
 
 	-- See `:help K` for why this keymap
 	nmap("K", vim.lsp.buf.hover, "Hover Documentation")
-	vim.keymap.set({"n", "i"}, "<A-k>", vim.lsp.buf.signature_help, { desc = "Signature Documentation" })
+	vim.keymap.set({ "n", "i" }, "<A-k>", vim.lsp.buf.signature_help, { desc = "Signature Documentation" })
 
 	-- Lesser used LSP functionality
 	nmap("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
@@ -112,6 +112,18 @@ mason_lspconfig.setup_handlers({
 			filetypes = (servers[server_name] or {}).filetypes,
 		})
 	end,
+})
+
+require("lspconfig").solargraph.setup({
+	cmd = {
+		"asdf",
+		"exec",
+		"solargraph",
+		"stdio",
+	},
+	filetypes = { "ruby" },
+	capabilities = capabilities,
+	on_attach = on_attach,
 })
 
 local null_ls = require("null-ls")
