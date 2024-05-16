@@ -123,6 +123,14 @@ M.keys = {
 		end,
 		desc = "[F]ind git changes in the project",
 	},
+	{
+		"<leader>fs",
+		mode = { "n" },
+		function()
+			require("telescope.builtin").grep_string()
+		end,
+		desc = "[F]ind [s]tring beneath the cursor",
+	},
 }
 
 M.config = function()
