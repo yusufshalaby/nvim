@@ -20,6 +20,9 @@ return {
 		vim.keymap.set("n", "<leader>gs", function()
 			require("gitsigns").stage_hunk()
 		end, { buffer = bufnr, desc = "Stage hunk" })
+		vim.keymap.set("n", "<leader>gb", function()
+			require("gitsigns").blame_line()
+		end, { buffer = bufnr, desc = "Blame line" })
 
 		-- don't override the built-in and fugitive keymaps
 		local gs = package.loaded.gitsigns
