@@ -283,12 +283,34 @@ return {
 	},
 	{
 		"sainnhe/everforest",
-		enabled = true,
+		enabled = false,
 		config = function()
 			vim.cmd("let g:everforest_background = 'medium'")
 			vim.cmd("let g:everforest_better_performance = 1")
 			vim.cmd("let g:everforest_float_style = 'dim'")
 			vim.cmd("colorscheme everforest")
+		end,
+	},
+	{
+		"catppuccin/nvim",
+		name = "catppuccin",
+		enabled = false,
+		config = function()
+			require("plugins.catppuccin")
+		end,
+	},
+	{
+		"EdenEast/nightfox.nvim",
+		enabled = true,
+		config = function()
+			vim.cmd("colorscheme nordfox")
+			vim.api.nvim_set_hl(0, "@markup.heading.1.markdown", { link = "rainbowcol1"})
+			vim.api.nvim_set_hl(0, "@markup.heading.2.markdown", { link = "rainbowcol2"})
+			vim.api.nvim_set_hl(0, "@markup.heading.3.markdown", { link = "rainbowcol3"})
+			vim.api.nvim_set_hl(0, "@markup.heading.4.markdown", { link = "rainbowcol4"})
+			vim.api.nvim_set_hl(0, "@markup.heading.5.markdown", { link = "rainbowcol5"})
+			vim.api.nvim_set_hl(0, "@markup.heading.6.markdown", { link = "rainbowcol6"})
+			vim.cmd("hi @markup.italic.markdown_inline cterm=italic gui=italic")
 		end,
 	},
 	{
