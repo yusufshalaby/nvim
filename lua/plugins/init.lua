@@ -66,7 +66,6 @@ return {
 	{ "lewis6991/gitsigns.nvim", opts = require("plugins.gitsigns") },
 	{
 		"nvim-telescope/telescope.nvim",
-		branch = "0.1.x",
 		cmd = "Telescope",
 		keys = require("plugins.telescope").keys,
 		dependencies = {
@@ -283,7 +282,7 @@ return {
 	},
 	{
 		"sainnhe/everforest",
-		enabled = false,
+		enabled = true,
 		config = function()
 			vim.cmd("let g:everforest_background = 'medium'")
 			vim.cmd("let g:everforest_better_performance = 1")
@@ -301,16 +300,23 @@ return {
 	},
 	{
 		"EdenEast/nightfox.nvim",
-		enabled = true,
+		enabled = false,
 		config = function()
 			vim.cmd("colorscheme nordfox")
-			vim.api.nvim_set_hl(0, "@markup.heading.1.markdown", { link = "rainbowcol1"})
-			vim.api.nvim_set_hl(0, "@markup.heading.2.markdown", { link = "rainbowcol2"})
-			vim.api.nvim_set_hl(0, "@markup.heading.3.markdown", { link = "rainbowcol3"})
-			vim.api.nvim_set_hl(0, "@markup.heading.4.markdown", { link = "rainbowcol4"})
-			vim.api.nvim_set_hl(0, "@markup.heading.5.markdown", { link = "rainbowcol5"})
-			vim.api.nvim_set_hl(0, "@markup.heading.6.markdown", { link = "rainbowcol6"})
+			vim.api.nvim_set_hl(0, "@markup.heading.1.markdown", { link = "rainbowcol1" })
+			vim.api.nvim_set_hl(0, "@markup.heading.2.markdown", { link = "rainbowcol2" })
+			vim.api.nvim_set_hl(0, "@markup.heading.3.markdown", { link = "rainbowcol3" })
+			vim.api.nvim_set_hl(0, "@markup.heading.4.markdown", { link = "rainbowcol4" })
+			vim.api.nvim_set_hl(0, "@markup.heading.5.markdown", { link = "rainbowcol5" })
+			vim.api.nvim_set_hl(0, "@markup.heading.6.markdown", { link = "rainbowcol6" })
 			vim.cmd("hi @markup.italic.markdown_inline cterm=italic gui=italic")
+		end,
+	},
+	{
+		"rebelot/kanagawa.nvim",
+		enabled = false,
+		config = function()
+			require("plugins.kanagawa")
 		end,
 	},
 	{
