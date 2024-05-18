@@ -243,6 +243,13 @@ return {
 				end,
 				{ desc = "Open oil" },
 			},
+			{
+				"-",
+				function()
+					require("oil").toggle_float()
+				end,
+				{ desc = "Open oil" },
+			},
 		},
 		event = { "Syntax" },
 		opts = {
@@ -255,6 +262,9 @@ return {
 				-- "permissions",
 				"size",
 				-- "mtime",
+			},
+			view_options = {
+				show_hidden = true,
 			},
 		},
 		-- Optional dependencies
