@@ -212,7 +212,12 @@ return {
 		"jpalardy/vim-slime",
 		config = function()
 			vim.api.nvim_command([[
-				let g:slime_target = 'kitty'
+				if exists('$TMUX')
+				  let g:slime_target = 'tmux'
+				  let g:slime_default_config = {"socket_name": "default", "target_pane": "{last}"}
+				else
+				  let g:slime_target = 'kitty'
+
 				let g:slime_bracketed_paste =1
 				let g:slime_config_defaults["python_ipython"] = 0
 				let g:slime_config_defaults["dispatch_ipython_pause"] = 100
