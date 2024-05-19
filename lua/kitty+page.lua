@@ -17,7 +17,7 @@ local setup = function()
 	vim.opt.showcmd = false
 	vim.opt.scrollback = 1000
 	-- use the visual color matching the current colorscheme
-	vim.cmd("hi Visual ctermbg=237 guibg=#45403d")
+	vim.cmd("hi Visual ctermbg=52 guibg=#543a48")
 	vim.keymap.set("n", "<Esc>", "<Cmd>noh<CR>")
 	local term_buf = vim.api.nvim_create_buf(true, false)
 	local term_io = vim.api.nvim_open_term(term_buf, {})

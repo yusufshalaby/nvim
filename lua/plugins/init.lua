@@ -215,8 +215,12 @@ return {
 				if exists('$TMUX')
 				  let g:slime_target = 'tmux'
 				  let g:slime_default_config = {"socket_name": "default", "target_pane": "{last}"}
-				else
+				elseif $TERM_PROGRAM == 'WezTerm'
+				  let g:slime_target = 'wezterm'
+				  let g:slime_default_config = {"pane_direction": "right"}
+				elseif $TERM == 'xterm-kitty'
 				  let g:slime_target = 'kitty'
+				endif
 
 				let g:slime_bracketed_paste =1
 				let g:slime_config_defaults["python_ipython"] = 0
