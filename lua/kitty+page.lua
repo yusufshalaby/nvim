@@ -13,7 +13,7 @@ return function(INPUT_LINE_NUMBER, CURSOR_LINE, CURSOR_COLUMN)
 	vim.opt.ruler = false
 	vim.opt.laststatus = 0
 	vim.opt.showcmd = false
-	vim.opt.scrollback = 1000
+	vim.opt.scrollback = 100000
 	-- use the visual color matching the current colorscheme
 	vim.cmd("hi Visual ctermbg=52 guibg=#543a48")
 	vim.keymap.set("n", "<Esc>", "<Cmd>noh<CR>")
@@ -25,7 +25,6 @@ return function(INPUT_LINE_NUMBER, CURSOR_LINE, CURSOR_COLUMN)
 	local term_io = vim.api.nvim_open_term(term_buf, {})
 	vim.api.nvim_buf_set_keymap(term_buf, "n", "q", "<Cmd>q<CR>", {})
 	local group = vim.api.nvim_create_augroup("kitty+page", {})
-	local vimEnterCompleted = false
 
 	local setCursor = function()
 		vim.api.nvim_feedkeys(tostring(INPUT_LINE_NUMBER) .. [[ggzt]], "n", true)
@@ -46,7 +45,6 @@ return function(INPUT_LINE_NUMBER, CURSOR_LINE, CURSOR_COLUMN)
 			local mode = vim.fn.mode()
 			if mode == "t" then
 				vim.cmd.stopinsert()
-				vim.schedule(setCursor)
 			end
 		end,
 	})
@@ -66,7 +64,6 @@ return function(INPUT_LINE_NUMBER, CURSOR_LINE, CURSOR_COLUMN)
 			end
 			vim.api.nvim_win_set_buf(current_win, term_buf)
 			vim.api.nvim_buf_delete(ev.buf, { force = true })
-			vimEnterCompleted = true
 		end,
 	})
 
@@ -79,13 +76,5 @@ return function(INPUT_LINE_NUMBER, CURSOR_LINE, CURSOR_COLUMN)
 		pattern = "*",
 	})
 
-	local function afterVimEnter()
-		if vimEnterCompleted then
-			vim.schedule(setCursor)
-		else
-			vim.defer_fn(afterVimEnter, 10)
-		end
-	end
-
-	afterVimEnter()
+	vim.defer_fn(setCursor, 10)
 end
