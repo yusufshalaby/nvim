@@ -1,4 +1,4 @@
--- https://github.com/kovidgoyal/kitty/issues/719#issuecomment-1721699211
+-- based on https://gist.github.com/galaxia4Eva/9e91c4f275554b4bd844b6feece16b3d
 return function(INPUT_LINE_NUMBER, CURSOR_LINE, CURSOR_COLUMN)
 	-- print("INPUT_LINE_NUMBER:", INPUT_LINE_NUMBER, "CURSOR_LINE:", CURSOR_LINE, "CURSOR_COLUMN:", CURSOR_COLUMN)
 	vim.opt.encoding = "utf-8"
