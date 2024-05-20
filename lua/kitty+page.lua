@@ -15,7 +15,7 @@ return function(INPUT_LINE_NUMBER, CURSOR_LINE, CURSOR_COLUMN)
 	vim.opt.showcmd = false
 	vim.opt.scrollback = 100000
 	-- use the visual color matching the current colorscheme
-	vim.cmd("hi Visual ctermbg=52 guibg=#543a48")
+	vim.cmd("hi Visual ctermfg=0 ctermbg=9")
 	vim.keymap.set("n", "<Esc>", "<Cmd>noh<CR>")
 	vim.keymap.set("n", "<C-d>", "<C-d>zz")
 	vim.keymap.set("n", "<C-u>", "<C-u>zz")
