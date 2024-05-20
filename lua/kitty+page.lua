@@ -35,7 +35,7 @@ return function(INPUT_LINE_NUMBER, CURSOR_LINE, CURSOR_COLUMN)
 		line = CURSOR_LINE
 		vim.api.nvim_feedkeys(tostring(line - 1) .. [[j]], "n", true)
 		vim.api.nvim_feedkeys([[0]], "n", true)
-		vim.api.nvim_feedkeys(tostring(CURSOR_COLUMN - 1) .. [[l]], "n", true)
+		-- vim.api.nvim_feedkeys(tostring(CURSOR_COLUMN - 1) .. [[l]], "n", true)
 	end
 
 	vim.api.nvim_create_autocmd("ModeChanged", {
@@ -45,6 +45,7 @@ return function(INPUT_LINE_NUMBER, CURSOR_LINE, CURSOR_COLUMN)
 			local mode = vim.fn.mode()
 			if mode == "t" then
 				vim.cmd.stopinsert()
+				vim.schedule(setCursor)
 			end
 		end,
 	})
