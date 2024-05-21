@@ -6,7 +6,7 @@ return function(INPUT_LINE_NUMBER, CURSOR_LINE, CURSOR_COLUMN)
 	vim.opt.compatible = false
 	vim.opt.number = false
 	vim.opt.relativenumber = false
-	vim.opt.termguicolors = false
+	vim.opt.termguicolors = true
 	vim.o.ignorecase = true
 	vim.o.smartcase = true
 	vim.opt.showmode = true
@@ -15,7 +15,7 @@ return function(INPUT_LINE_NUMBER, CURSOR_LINE, CURSOR_COLUMN)
 	vim.opt.showcmd = false
 	vim.opt.scrollback = 100000
 	-- use the visual color matching the current colorscheme
-	vim.cmd("hi Visual ctermfg=0 ctermbg=9")
+	vim.cmd("hi Normal ctermbg=None ctermfg=None guibg=None guifg=None")
 	vim.keymap.set("n", "<Esc>", "<Cmd>noh<CR>")
 	vim.keymap.set("n", "<C-d>", "<C-d>zz")
 	vim.keymap.set("n", "<C-u>", "<C-u>zz")
