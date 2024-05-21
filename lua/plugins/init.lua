@@ -255,16 +255,21 @@ return {
 			{
 				"-",
 				function()
-					require("oil").toggle_float()
+					require("oil").open()
 				end,
 				{ desc = "Open oil" },
 			},
 		},
 		event = { "Syntax" },
 		opts = {
+			use_default_keymaps = false,
 			keymaps = {
+				["-"] = "actions.parent",
 				["<C-n>"] = "actions.close",
+				["<CR>"] = "actions.select",
 				["H"] = "actions.toggle_hidden",
+				["g?"] = "actions.show_help",
+				["gx"] = "actions.open_external",
 			},
 			columns = {
 				"icon",
