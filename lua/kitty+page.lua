@@ -16,6 +16,7 @@ return function(INPUT_LINE_NUMBER, CURSOR_LINE, CURSOR_COLUMN)
 	vim.opt.scrollback = 100000
 	-- use the visual color matching the current colorscheme
 	vim.cmd("hi Normal ctermbg=None ctermfg=None guibg=None guifg=None")
+	vim.cmd("set cmdheight=0")
 	vim.keymap.set("n", "<Esc>", "<Cmd>noh<CR>")
 	vim.keymap.set("n", "<C-d>", "<C-d>zz")
 	vim.keymap.set("n", "<C-u>", "<C-u>zz")
@@ -35,7 +36,7 @@ return function(INPUT_LINE_NUMBER, CURSOR_LINE, CURSOR_COLUMN)
 		line = CURSOR_LINE
 		vim.api.nvim_feedkeys(tostring(line - 1) .. [[j]], "n", true)
 		vim.api.nvim_feedkeys([[0]], "n", true)
-		-- vim.api.nvim_feedkeys(tostring(CURSOR_COLUMN - 1) .. [[l]], "n", true)
+		vim.api.nvim_feedkeys(tostring(CURSOR_COLUMN - 1) .. [[l]], "n", true)
 	end
 
 	vim.api.nvim_create_autocmd("ModeChanged", {
