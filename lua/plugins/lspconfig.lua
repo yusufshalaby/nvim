@@ -87,6 +87,7 @@ local servers = {
 	lua_ls = {}, -- TJ Devries lua lsp setup: https://github.com/neovim/neovim/issues/21686#issuecomment-1522446128
 	taplo = {},
 	marksman = {},
+	html = {},
 }
 
 -- Setup neovim lua configuration
@@ -132,7 +133,7 @@ local b = null_ls.builtins
 
 local sources = {
 	b.formatting.prettier.with({
-		filetypes = { "html", "markdown", "css", "json", "yaml" },
+		filetypes = { "markdown", "css", "json", "yaml" },
 		-- use prettierrc to enable prosewrap:
 		-- https://github.com/LazyVim/LazyVim/discussions/2512#discussioncomment-8381919
 		-- or just force it for all files:
