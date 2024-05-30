@@ -71,6 +71,21 @@ return {
 		keys = require("plugins.neotest").keys,
 	},
 	{
+		"vim-test/vim-test",
+		cmd = {
+			"TestNearest",
+			"TestClass",
+			"TestFile",
+			"TestSuite",
+			"TestLast",
+			"TestVisit",
+		},
+		config = function()
+			vim.g["test#strategy"] = "neovim"
+			vim.g["test#neovim#term_position"] = "vert botright"
+		end,
+	},
+	{
 		"ThePrimeagen/harpoon",
 		event = { "BufReadPre", "BufNewFile" },
 		opts = {},
