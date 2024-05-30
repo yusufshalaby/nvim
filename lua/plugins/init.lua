@@ -233,18 +233,15 @@ return {
 	},
 	{
 		"jpalardy/vim-slime",
+		init = function()
+			vim.g.slime_target = "neovim"
+		end,
 		config = function()
+			vim.g.slime_input_pid = false
+			vim.g.slime_suggest_default = true
+			vim.g.slime_menu_config = false
+			vim.g.slime_neovim_ignore_unlisted = false
 			vim.api.nvim_command([[
-				if exists('$TMUX')
-				  let g:slime_target = 'tmux'
-				  let g:slime_default_config = {"socket_name": "default", "target_pane": "{last}"}
-				elseif $TERM_PROGRAM == 'WezTerm'
-				  let g:slime_target = 'wezterm'
-				  let g:slime_default_config = {"pane_direction": "right"}
-				elseif $TERM == 'xterm-kitty'
-				  let g:slime_target = 'kitty'
-				endif
-
 				let g:slime_bracketed_paste =1
 				let g:slime_config_defaults["python_ipython"] = 0
 				let g:slime_config_defaults["dispatch_ipython_pause"] = 100
@@ -261,6 +258,15 @@ return {
 				    let add_eol_pat = '\n\s[^\n]\+\n\zs\ze\('.except_pat.'\S\|$\)'
 				    return substitute(dedented_lines, add_eol_pat, "\n", "g")
 				  end
+				endfunction
+
+				let g:slime_config_defaults["scala_ammonite"] = 0
+				function! _EscapeText_scala(text)
+				  if slime#config#resolve("scala_ammonite")
+				    return ["{\n", a:text, "}\n"]
+				  end
+				  " \x04 is ctrl-d
+				  return [":paste\n", a:text, "\x04"]
 				endfunction
 				]])
 		end,
