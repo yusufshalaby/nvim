@@ -246,7 +246,7 @@ return {
 		},
 		-- opts = {},
 		config = function()
-		     require("trouble").setup({})
+			require("trouble").setup({})
 			vim.api.nvim_set_hl(0, "TroubleNormal", { link = "Normal" })
 			vim.api.nvim_set_hl(0, "TroubleNormalNC", { link = "Normal" })
 		end,
@@ -462,14 +462,10 @@ return {
 		ft = "csv",
 	},
 	{
-		"chrishrb/gx.nvim",
-		enabled = false,
-		keys = { { "gx", "<cmd>Browse<cr>", mode = { "n", "x" } } },
-		cmd = { "Browse" },
-		init = function()
-			vim.g.netrw_nogx = 1 -- disable netrw gx
+		"norcalli/nvim-colorizer.lua",
+		cmd = { "ColorizerAttachToBuffer", "ColorizerToggle" },
+		config = function()
+			require("colorizer").setup()
 		end,
-		dependencies = { "nvim-lua/plenary.nvim" },
-		config = true,
 	},
 }
