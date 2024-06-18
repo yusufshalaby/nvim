@@ -64,6 +64,19 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 	pattern = "*",
 })
 
+local markdown_group = vim.api.nvim_create_augroup("MarkdownBuffer", { clear = true })
+vim.api.nvim_create_autocmd("BufEnter", {
+	callback = function()
+    if vim.bo.filetype == "markdown" then
+      vim.opt.conceallevel = 2
+    else
+      vim.opt.conceallevel = 0
+    end
+	end,
+	group = markdown_group,
+	pattern = "*",
+})
+
 -- for neovide
 vim.opt.guifont = { "JetBrains Mono", ":h18" }
 vim.g.neovide_input_macos_option_key_is_meta = "both"
