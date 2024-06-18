@@ -139,6 +139,9 @@ local sources = {
 		-- or just force it for all files:
 		-- extra_args = { "--prose-wrap", "always" },
 	}),
+	b.formatting.shfmt.with({
+		filetypes = { "bash", "sh" },
+	}),
 	b.formatting.stylua,
 	b.formatting.sqlfluff,
 	b.diagnostics.cfn_lint,
