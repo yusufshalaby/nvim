@@ -64,17 +64,22 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 	pattern = "*",
 })
 
-local markdown_group = vim.api.nvim_create_augroup("MarkdownBuffer", { clear = true })
+local markdown_enter_group = vim.api.nvim_create_augroup("MarkdownEnterBuffer", { clear = true })
 vim.api.nvim_create_autocmd("BufEnter", {
 	callback = function()
-    if vim.bo.filetype == "markdown" then
-      vim.opt.conceallevel = 2
-    else
-      vim.opt.conceallevel = 0
-    end
+		vim.opt.conceallevel = 2
 	end,
-	group = markdown_group,
-	pattern = "*",
+	group = markdown_enter_group,
+	pattern = "*.md",
+})
+
+local markdown_leave_group = vim.api.nvim_create_augroup("MarkdownLeaveBuffer", { clear = true })
+vim.api.nvim_create_autocmd("BufLeave", {
+  callback = function()
+    vim.opt.conceallevel = 0
+  end,
+  group = markdown_leave_group,
+  pattern = "*.md",
 })
 
 -- for neovide
