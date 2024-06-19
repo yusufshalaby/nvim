@@ -27,12 +27,12 @@ require("tokyonight").setup({
 	--- function will be called with a ColorScheme table
 	---@param colors ColorScheme
 	on_colors = function(colors)
-		colors.bg = "#232323"
-		colors.bg_sidebar = "#161616"
-		colors.bg_float = "#232323"
-		colors.bg_popup = "#161616"
-		colors.comment = "#6e78a4"
-		colors.fg_gutter = "#454d71"
+		-- colors.bg = "#232323"
+		-- colors.bg_sidebar = "#161616"
+		-- colors.bg_float = "#232323"
+		-- colors.bg_popup = "#161616"
+		-- colors.comment = "#6e78a4"
+		-- colors.fg_gutter = "#454d71"
 
 	end,
 
@@ -40,15 +40,15 @@ require("tokyonight").setup({
 	---@param highlights Highlights
 	---@param colors ColorScheme
 	on_highlights = function(highlights, colors)
-		highlights["@markup.raw.markdown_inline"] = {
-			bg = colors.bg,
-			fg = colors.blue,
-			style = "italic",
-		}
-		highlights.GitSignsAdd = { fg = colors.green }
-		highlights.GitSignsChange = { fg = colors.yellow }
-		highlights.GitSignsDelete = { fg = colors.red }
-		highlights.StatusLine = { bg = colors.bg_statusline }
-		highlights.Pmenu = { bg = colors.bg }
+		-- highlights["@markup.raw.markdown_inline"] = {
+		-- 	bg = colors.bg,
+		-- 	fg = colors.blue,
+		-- 	style = "italic",
+		-- }
+		-- highlights.GitSignsAdd = { fg = colors.green }
+		-- highlights.GitSignsChange = { fg = colors.yellow }
+		-- highlights.GitSignsDelete = { fg = colors.red }
+		-- -- highlights.StatusLine = { bg = colors.bg_statusline }
+		-- highlights.Pmenu = { bg = colors.bg }
 	end,
 })
