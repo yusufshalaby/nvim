@@ -97,6 +97,9 @@ M.config = function()
 			documentation = cmp.config.window.bordered({
 				winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,CursorLine:PmenuSel,Search:None",
 			}),
+			completion = cmp.config.window.bordered({
+				winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,CursorLine:PmenuSel,Search:None",
+			}),
 		},
 	})
 end
