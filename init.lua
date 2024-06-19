@@ -44,6 +44,11 @@ vim.g.loaded_netrwPlugin = 1
 vim.wo.number = true
 vim.wo.signcolumn = "yes"
 vim.wo.relativenumber = true
+vim.diagnostic.config({
+  float = {
+    border = "rounded"
+  }
+})
 
 -- for vim-rhubarb to open browser
 vim.api.nvim_create_user_command("Browse", function(opts)
