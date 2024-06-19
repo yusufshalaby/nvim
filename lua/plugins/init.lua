@@ -380,7 +380,7 @@ return {
 	},
 	{
 		"EdenEast/nightfox.nvim",
-		enabled = true,
+		enabled = false,
 		config = function()
 			vim.cmd("colorscheme carbonfox")
 			vim.api.nvim_set_hl(0, "@markup.heading.1.markdown", { link = "rainbowcol1" })
@@ -411,14 +411,12 @@ return {
 	},
 	{
 		"folke/tokyonight.nvim",
-		enabled = false,
+		enabled = true,
 		lazy = false,
 		priority = 1000,
 		config = function()
 			require("plugins.tokyonight")
 			vim.cmd("colorscheme tokyonight")
-			vim.cmd("hi CursorLineNr guifg=#ffc777")
-			vim.cmd("hi @markup.italic.markdown_inline cterm=italic gui=italic")
 		end,
 		-- config = function()
 		-- 	vim.cmd("colorscheme tokyonight")
