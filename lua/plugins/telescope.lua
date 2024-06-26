@@ -78,6 +78,10 @@ M.keys = {
 					"--hidden",
 					"--exclude",
 					".git",
+					"--exclude",
+					"venv",
+					"--exclude",
+					"build",
 				},
 			})
 		end,
