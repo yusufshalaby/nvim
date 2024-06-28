@@ -18,7 +18,8 @@ local on_attach = function(_, bufnr)
 	end
 
 	vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" })
-	vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded" })
+	vim.lsp.handlers["textDocument/signatureHelp"] =
+		vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded" })
 
 	nmap("<leader>rn", vim.lsp.buf.rename, "[R]e[n]ame")
 	nmap("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
@@ -126,6 +127,13 @@ require("lspconfig").solargraph.setup({
 		"stdio",
 	},
 	filetypes = { "ruby" },
+	capabilities = capabilities,
+	on_attach = on_attach,
+})
+
+require("lspconfig").robotframework_ls.setup({
+	cmd = { "robotframework_ls" },
+	filetypes = { "robot" },
 	capabilities = capabilities,
 	on_attach = on_attach,
 })
