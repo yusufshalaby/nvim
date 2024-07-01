@@ -45,9 +45,9 @@ vim.wo.number = true
 vim.wo.signcolumn = "yes"
 vim.wo.relativenumber = true
 vim.diagnostic.config({
-  float = {
-    border = "rounded"
-  }
+	float = {
+		border = "rounded",
+	},
 })
 
 -- for vim-rhubarb to open browser
@@ -56,7 +56,7 @@ vim.api.nvim_create_user_command("Browse", function(opts)
 end, { nargs = 1 })
 
 require("mappings")
-require("lazy").setup({ require("plugins") }, {})
+require("lazy").setup({ require("plugins") }, { ui = { border = "rounded", backdrop = 100 } })
 
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
