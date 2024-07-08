@@ -20,6 +20,42 @@ return {
 		end,
 	},
 	{
+		"mfussenegger/nvim-lint",
+		lazy = true,
+		ft = { "python", "robot" },
+		config = function()
+			require("lint").linters_by_ft = {
+				python = { "ruff" },
+				robot = { "robocop" },
+			}
+			vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost" }, {
+				callback = function()
+					-- try_lint without arguments runs the linters defined in `linters_by_ft`
+					-- for the current filetype
+					require("lint").try_lint()
+				end,
+			})
+		end,
+	},
+	{
+		"stevearc/conform.nvim",
+		lazy = true,
+		ft = { "python" },
+		config = function()
+			require("conform").setup({
+				formatters_by_ft = {
+					python = { "ruff_fix", "ruff_format" },
+				},
+				vim.keymap.set("n", "<leader>fm", function()
+					require("conform").format({
+						async = true,
+						lsp_fallback = true,
+					})
+				end, { desc = "Format buffer" }),
+			})
+		end,
+	},
+	{
 		"mrcjkb/rustaceanvim",
 		-- version = "^3", -- Recommended
 		ft = { "rust" },

@@ -47,9 +47,11 @@ local on_attach = function(_, bufnr)
 		vim.lsp.buf.format()
 	end, { desc = "Format current buffer with LSP" })
 
-	nmap("<leader>fm", function()
-		vim.lsp.buf.format({ async = true })
-	end, "LSP formatting")
+	if vim.bo.filetype ~= "python" then
+		nmap("<leader>fm", function()
+			vim.lsp.buf.format({ async = true })
+		end, "LSP formatting")
+	end
 end
 
 -- mason-lspconfig requires that these setup functions are called in this order
@@ -86,7 +88,7 @@ local servers = {
 			},
 		},
 	},
-	ruff_lsp = {},
+	-- ruff_lsp = {},
 	lua_ls = {}, -- TJ Devries lua lsp setup: https://github.com/neovim/neovim/issues/21686#issuecomment-1522446128
 	taplo = {},
 	marksman = {},
