@@ -167,6 +167,7 @@ return {
 	},
 	{
 		"nvim-lualine/lualine.nvim",
+		enabled = false,
 		event = { "BufReadPre", "BufNewFile" },
 		opts = require("plugins.lualine"),
 	},
