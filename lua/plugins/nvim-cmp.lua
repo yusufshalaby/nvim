@@ -95,10 +95,12 @@ M.config = function()
 		},
 		window = {
 			documentation = cmp.config.window.bordered({
-				winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,CursorLine:PmenuSel,Search:None",
+				border = "double",
+				winhighlight = "Normal:Normal,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None",
 			}),
 			completion = cmp.config.window.bordered({
-				winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,CursorLine:PmenuSel,Search:None",
+				border = "single",
+				winhighlight = "Normal:Normal,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None",
 			}),
 		},
 	})
