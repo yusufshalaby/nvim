@@ -47,11 +47,6 @@ local on_attach = function(_, bufnr)
 		vim.lsp.buf.format()
 	end, { desc = "Format current buffer with LSP" })
 
-	if vim.bo.filetype ~= "python" then
-		nmap("<leader>fm", function()
-			vim.lsp.buf.format({ async = true })
-		end, "LSP formatting")
-	end
 end
 
 -- mason-lspconfig requires that these setup functions are called in this order

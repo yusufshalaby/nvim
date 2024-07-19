@@ -40,18 +40,23 @@ return {
 	{
 		"stevearc/conform.nvim",
 		lazy = true,
-		ft = { "python" },
+		keys = {
+			{
+				"<leader>fm",
+				function()
+					require("conform").format({
+						async = true,
+						lsp_fallback = true,
+					})
+				end,
+				{ desc = "Format buffer" },
+			},
+		},
 		config = function()
 			require("conform").setup({
 				formatters_by_ft = {
 					python = { "ruff_fix", "ruff_format" },
 				},
-				vim.keymap.set("n", "<leader>fm", function()
-					require("conform").format({
-						async = true,
-						lsp_fallback = true,
-					})
-				end, { desc = "Format buffer" }),
 			})
 		end,
 	},
