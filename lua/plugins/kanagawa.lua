@@ -54,6 +54,7 @@ require("kanagawa").setup({
 			["@markup.heading.6.markdown"] = { link = "Purple" },
 			["@markup.heading.7.markdown"] = { link = "Aqua" },
 			FloatBorder = { fg = colors.palette.carpYellow, bg = theme.ui.bg },
+			NormalFloat = { bg = theme.ui.bg },
 		}
 	end,
 })
