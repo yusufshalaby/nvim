@@ -25,7 +25,7 @@ vim.opt.rtp:prepend(lazypath)
 vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 vim.opt.foldenable = false
-vim.opt.scrolloff = 8
+vim.opt.scrolloff = 4
 vim.o.hlsearch = true
 vim.o.mouse = "a"
 vim.o.clipboard = "unnamedplus"
