@@ -519,4 +519,17 @@ return {
 			require("colorizer").setup()
 		end,
 	},
+	{
+		"sindrets/diffview.nvim",
+		cmd = "DiffviewOpen",
+		config = function()
+			require("diffview").setup({
+				view = {
+					diff_view = { layout = "diff2_vertical" },
+					default = { layout = "diff2_vertical" },
+				},
+				win_config = { type = "split", position = "bottom" },
+			})
+		end,
+	},
 }
