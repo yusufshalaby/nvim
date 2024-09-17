@@ -77,6 +77,11 @@ return {
 						},
 					},
 				},
+				tools = {
+					float_win_config = {
+						border = "double",
+					},
+				},
 			}
 		end,
 	},
