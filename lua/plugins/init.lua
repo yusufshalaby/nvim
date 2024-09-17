@@ -286,8 +286,18 @@ return {
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 		keys = {
 			{
-				"<leader>q",
+				"<leader>d",
 				"<cmd>Trouble diagnostics toggle<cr>",
+				desc = "Toggle diagnostics",
+			},
+			{
+				"<leader>q",
+				"<cmd>Trouble quickfix toggle<cr>",
+				desc = "Toggle diagnostics",
+			},
+			{
+				"<leader>l",
+				"<cmd>Trouble loclist toggle<cr>",
 				desc = "Toggle diagnostics",
 			},
 		},
@@ -469,17 +479,6 @@ return {
 		-- config = function()
 		-- 	vim.cmd("colorscheme tokyonight")
 		-- end,
-	},
-	{
-		"tamton-aquib/duck.nvim",
-		config = function()
-			vim.keymap.set("n", "<leader>dd", function()
-				require("duck").hatch()
-			end, {})
-			vim.keymap.set("n", "<leader>dk", function()
-				require("duck").cook()
-			end, {})
-		end,
 	},
 	{
 		"epwalsh/obsidian.nvim",
