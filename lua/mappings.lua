@@ -42,3 +42,11 @@ function FormatJson()
 end
 
 vim.keymap.set("n", "<leader>jq", "<CMD>call v:lua.FormatJson()<CR>", { desc = "Format JSON" })
+
+-- Treesitter folds
+function TreesitterFolds()
+	vim.opt.foldmethod = "expr"
+	vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+end
+
+vim.keymap.set("n", "<leader>tf", "<CMD>call v:lua.TreesitterFolds()<CR>", { desc = "Enable treesitter folds" })
