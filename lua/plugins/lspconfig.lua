@@ -140,7 +140,7 @@ local b = null_ls.builtins
 
 local sources = {
 	b.formatting.prettier.with({
-		filetypes = { "markdown", "css", "json", "yaml" },
+		filetypes = { "markdown", "css", "yaml" },
 		-- use prettierrc to enable prosewrap:
 		-- https://github.com/LazyVim/LazyVim/discussions/2512#discussioncomment-8381919
 		-- or just force it for all files:
