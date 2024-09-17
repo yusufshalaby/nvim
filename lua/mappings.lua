@@ -28,6 +28,16 @@ vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to previous dia
 vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next diagnostic message" })
 vim.keymap.set("n", "<leader>fl", vim.diagnostic.open_float, { desc = "Open floating diagnostic message" })
 
+-- Quickfix keymaps
+vim.keymap.set("n", "]q", "<Cmd>cnext<CR>", { desc = "Go to next quickfix item" })
+vim.keymap.set("n", "[q", "<Cmd>cprev<CR>", { desc = "Go to previous quickfix item" })
+vim.keymap.set("n", "[Q", "<Cmd>cfirst<CR>", { desc = "Go to first quickfix item" })
+vim.keymap.set("n", "]Q", "<Cmd>clast<CR>", { desc = "Go to last quickfix item" })
+vim.keymap.set("n", "]l", "<Cmd>lnext<CR>", { desc = "Go to next location list item" })
+vim.keymap.set("n", "[l", "<Cmd>lprev<CR>", { desc = "Go to previous location list item" })
+vim.keymap.set("n", "[L", "<Cmd>lfirst<CR>", { desc = "Go to first location list item" })
+vim.keymap.set("n", "]L", "<Cmd>llast<CR>", { desc = "Go to last location list item" })
+
 -- Treesitter Context
 vim.keymap.set("n", "<leader>tc", "<CMD>TSContextEnable<CR>", { desc = "Enable treesitter context" })
 
