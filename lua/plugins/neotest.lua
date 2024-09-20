@@ -7,6 +7,7 @@ M.dependencies = {
 	"nvim-treesitter/nvim-treesitter",
 	"nvim-neotest/neotest-python",
 	"rouge8/neotest-rust",
+	"nvim-neotest/neotest-go",
 }
 
 M.config = function()
@@ -18,6 +19,7 @@ M.config = function()
 				-- python = "venv/bin/python",
 			}),
 			require("neotest-rust"),
+			require("neotest-go"),
 		},
 		status = { virtual_text = true },
 		output = { open_on_run = true },
