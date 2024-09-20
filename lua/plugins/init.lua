@@ -534,6 +534,9 @@ return {
 					default = { layout = "diff2_vertical" },
 				},
 				win_config = { type = "split", position = "bottom" },
+				default_args = {
+					DiffviewOpen = { "--imply-local" },
+				},
 			})
 		end,
 	},
