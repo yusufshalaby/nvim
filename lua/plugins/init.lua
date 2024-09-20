@@ -3,6 +3,7 @@ return {
 	"tpope/vim-rhubarb",
 	"tpope/vim-sleuth",
 	"tpope/vim-surround",
+	require "plugins.debug",
 	{
 		-- LSP Configuration & Plugins
 		"neovim/nvim-lspconfig",
