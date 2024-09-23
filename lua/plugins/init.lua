@@ -526,13 +526,13 @@ return {
 	},
 	{
 		"sindrets/diffview.nvim",
-		cmd = "DiffviewOpen",
+		cmd = {"DiffviewOpen", "DiffviewFileHistory"},
 		config = function()
 			require("diffview").setup({
-				view = {
-					diff_view = { layout = "diff2_vertical" },
-					default = { layout = "diff2_vertical" },
-				},
+				-- view = {
+				-- 	diff_view = { layout = "diff2_horizontal" },
+				-- 	default = { layout = "diff2_horizontal" },
+				-- },
 				win_config = { type = "split", position = "bottom" },
 				default_args = {
 					DiffviewOpen = { "--imply-local" },
