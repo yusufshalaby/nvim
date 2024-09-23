@@ -23,6 +23,10 @@ map("n", "<S-tab>", "<Cmd>bp<CR>", opts)
 map("n", "<leader>b", "<Cmd>enew<CR>", { unpack(opts), desc = "New buffer" })
 map("n", "<leader>x", "<Cmd>bd<CR>", { unpack(opts), desc = "Delete buffer" })
 
+-- Tabs
+map("n", "<leader><tab>", "<Cmd>tabnext<CR>",{ unpack(opts), desc = "Next tab" })
+map("n", "<leader><S-tab>", "<Cmd>tabprevious<CR>", { unpack(opts), desc = "Previous tab" })
+
 -- Diagnostic keymaps
 vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to previous diagnostic message" })
 vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next diagnostic message" })
