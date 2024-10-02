@@ -171,7 +171,7 @@ return {
 			"nvim-treesitter/nvim-treesitter-textobjects",
 		},
 		build = ":TSUpdate",
-		event = { "BufReadPre", "BufNewFile" },
+		-- event = { "BufReadPre", "BufNewFile" },
 		config = function()
 			vim.defer_fn(function()
 				---@diagnostic disable-next-line: missing-fields
