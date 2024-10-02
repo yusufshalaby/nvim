@@ -12,7 +12,7 @@ return {
 			"williamboman/mason-lspconfig.nvim",
 			"nvimtools/none-ls.nvim",
 			-- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
-			{ "j-hui/fidget.nvim", tag = "legacy", opts = {} },
+			{ "j-hui/fidget.nvim", opts = {} },
 			"folke/neodev.nvim",
 		},
 		event = { "BufReadPre", "BufNewFile" },
