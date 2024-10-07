@@ -3,7 +3,7 @@ return {
 	"tpope/vim-rhubarb",
 	"tpope/vim-sleuth",
 	"tpope/vim-surround",
-	require "plugins.debug",
+	require("plugins.debug"),
 	{
 		-- LSP Configuration & Plugins
 		"neovim/nvim-lspconfig",
@@ -526,7 +526,7 @@ return {
 	},
 	{
 		"sindrets/diffview.nvim",
-		cmd = {"DiffviewOpen", "DiffviewFileHistory"},
+		cmd = { "DiffviewOpen", "DiffviewFileHistory" },
 		config = function()
 			require("diffview").setup({
 				-- view = {
