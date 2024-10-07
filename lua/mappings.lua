@@ -41,6 +41,7 @@ vim.keymap.set("n", "]l", "<Cmd>lnext<CR>", { desc = "Go to next location list i
 vim.keymap.set("n", "[l", "<Cmd>lprev<CR>", { desc = "Go to previous location list item" })
 vim.keymap.set("n", "[L", "<Cmd>lfirst<CR>", { desc = "Go to first location list item" })
 vim.keymap.set("n", "]L", "<Cmd>llast<CR>", { desc = "Go to last location list item" })
+vim.keymap.set("n", "<leader>gq", "<Cmd>Git difftool<CR>", { desc = "Send git diff to quickfix" })
 
 -- Treesitter Context
 vim.keymap.set("n", "<leader>tc", "<CMD>TSContextEnable<CR>", { desc = "Enable treesitter context" })
