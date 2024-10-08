@@ -33,8 +33,42 @@ vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next diagnos
 vim.keymap.set("n", "<leader>fl", vim.diagnostic.open_float, { desc = "Open floating diagnostic message" })
 
 -- Quickfix keymaps
-vim.keymap.set("n", "]q", "<Cmd>cnext<CR>", { desc = "Go to next quickfix item" })
-vim.keymap.set("n", "[q", "<Cmd>cprev<CR>", { desc = "Go to previous quickfix item" })
+vim.keymap.set("n", "]q", function()
+  local qflist = vim.fn.getqflist()
+  if #qflist == 0 then
+    vim.notify("Quickfix list is empty", vim.log.levels.WARN)
+    return
+  end
+  local current_idx = vim.fn.getqflist({ idx = 0 }).idx
+  if current_idx == #qflist then
+    vim.cmd("cfirst")
+  else
+    vim.cmd("cnext")
+  end
+end, { desc = "Go to next quickfix item (wrap around)" })
+
+vim.keymap.set("n", "[q", function()
+  local qflist = vim.fn.getqflist()
+  if #qflist == 0 then
+    vim.notify("Quickfix list is empty", vim.log.levels.WARN)
+    return
+  end
+  local current_idx = vim.fn.getqflist({ idx = 0 }).idx
+  if current_idx == 1 then
+    vim.cmd("clast")
+  else
+    vim.cmd("cprev")
+  end
+end, { desc = "Go to previous quickfix item (wrap around)" })
+vim.keymap.set("n", "<leader>q", function()
+  local qf_exists = vim.fn.getqflist({ winid = 0 }).winid ~= 0
+  if qf_exists then
+    vim.cmd("cclose")
+  else
+    vim.cmd("copen")
+  end
+end, { desc = "Toggle Quickfix List" })
+
 vim.keymap.set("n", "[Q", "<Cmd>cfirst<CR>", { desc = "Go to first quickfix item" })
 vim.keymap.set("n", "]Q", "<Cmd>clast<CR>", { desc = "Go to last quickfix item" })
 vim.keymap.set("n", "]l", "<Cmd>lnext<CR>", { desc = "Go to next location list item" })
