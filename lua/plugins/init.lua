@@ -282,33 +282,7 @@ return {
 			vim.fn["mkdp#util#install"]()
 		end,
 	},
-	{
-		"folke/trouble.nvim",
-		dependencies = { "nvim-tree/nvim-web-devicons" },
-		keys = {
-			{
-				"<leader>D",
-				"<cmd>Trouble diagnostics toggle<cr>",
-				desc = "Toggle diagnostics",
-			},
-			{
-				"<leader>Q",
-				"<cmd>Trouble quickfix toggle<cr>",
-				desc = "Toggle diagnostics",
-			},
-			{
-				"<leader>L",
-				"<cmd>Trouble loclist toggle<cr>",
-				desc = "Toggle diagnostics",
-			},
-		},
-		-- opts = {},
-		config = function()
-			require("trouble").setup({})
-			vim.api.nvim_set_hl(0, "TroubleNormal", { link = "Normal" })
-			vim.api.nvim_set_hl(0, "TroubleNormalNC", { link = "Normal" })
-		end,
-	},
+	require("plugins.trouble"),
 	{
 		"goolord/alpha-nvim",
 		enabled = false,

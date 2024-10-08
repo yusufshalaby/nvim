@@ -24,10 +24,10 @@ local on_attach = function(_, bufnr)
 	nmap("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
 
 	nmap("gd", "<cmd> Telescope lsp_definitions <CR>", "[G]oto [D]efinition")
-	nmap("gr", "<cmd> Telescope lsp_references <CR>", "[G]oto [R]eferences")
-	nmap("gI", "<cmd> Telescope lsp_implementations <CR>", "[G]oto [I]mplementation")
+	-- nmap("gr", "<cmd> Telescope lsp_references <CR>", "[G]oto [R]eferences")
+	-- nmap("gI", "<cmd> Telescope lsp_implementations <CR>", "[G]oto [I]mplementation")
 	nmap("<leader>D", "<cmd> Telescope lsp_type_definitions <CR>", "Type [D]efinition")
-	nmap("<leader>ds", "<cmd> Telescope lsp_document_symbols <CR>", "[D]ocument [S]ymbols")
+	-- nmap("<leader>ds", "<cmd> Telescope lsp_document_symbols <CR>", "[D]ocument [S]ymbols")
 	nmap("<leader>ws", "<cmd> Telescope lsp_dynamic_workspace_symbols <CR>", "[W]orkspace [S]ymbols")
 
 	-- See `:help K` for why this keymap
