@@ -9,12 +9,12 @@ return {
 			desc = "Toggle diagnostics",
 		},
 		{
-			"<leader>Q",
+			"<leader>q",
 			"<cmd>Trouble quickfix toggle<cr>",
 			desc = "Toggle diagnostics",
 		},
 		{
-			"<leader>L",
+			"<leader>l",
 			"<cmd>Trouble loclist toggle<cr>",
 			desc = "Toggle diagnostics",
 		},

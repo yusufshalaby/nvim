@@ -40,10 +40,14 @@ vim.keymap.set("n", "]q", function()
     return
   end
   local current_idx = vim.fn.getqflist({ idx = 0 }).idx
-  if current_idx == #qflist then
-    vim.cmd("cfirst")
+  if vim.bo.filetype == "trouble" then
+      vim.cmd("Trouble next")
   else
-    vim.cmd("cnext")
+    if current_idx == #qflist then
+      vim.cmd("cfirst")
+    else
+      vim.cmd("cnext")
+    end
   end
 end, { desc = "Go to next quickfix item (wrap around)" })
 
@@ -54,20 +58,16 @@ vim.keymap.set("n", "[q", function()
     return
   end
   local current_idx = vim.fn.getqflist({ idx = 0 }).idx
-  if current_idx == 1 then
-    vim.cmd("clast")
+  if vim.bo.filetype == "trouble" then
+      vim.cmd("Trouble prev")
   else
-    vim.cmd("cprev")
+    if current_idx == 1 then
+      vim.cmd("clast")
+    else
+      vim.cmd("cprev")
+    end
   end
 end, { desc = "Go to previous quickfix item (wrap around)" })
-vim.keymap.set("n", "<leader>q", function()
-  local qf_exists = vim.fn.getqflist({ winid = 0 }).winid ~= 0
-  if qf_exists then
-    vim.cmd("cclose")
-  else
-    vim.cmd("copen")
-  end
-end, { desc = "Toggle Quickfix List" })
 
 vim.keymap.set("n", "[Q", "<Cmd>cfirst<CR>", { desc = "Go to first quickfix item" })
 vim.keymap.set("n", "]Q", "<Cmd>clast<CR>", { desc = "Go to last quickfix item" })
@@ -75,7 +75,7 @@ vim.keymap.set("n", "]l", "<Cmd>lnext<CR>", { desc = "Go to next location list i
 vim.keymap.set("n", "[l", "<Cmd>lprev<CR>", { desc = "Go to previous location list item" })
 vim.keymap.set("n", "[L", "<Cmd>lfirst<CR>", { desc = "Go to first location list item" })
 vim.keymap.set("n", "]L", "<Cmd>llast<CR>", { desc = "Go to last location list item" })
-vim.keymap.set("n", "<leader>gq", "<Cmd>Git difftool<CR>", { desc = "Send git diff to quickfix" })
+vim.keymap.set("n", "<leader>gq", "<Cmd>Git difftool | cclose | Trouble quickfix<CR>", { desc = "Send git diff to quickfix" })
 
 -- Treesitter Context
 vim.keymap.set("n", "<leader>tc", "<CMD>TSContextEnable<CR>", { desc = "Enable treesitter context" })
