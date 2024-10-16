@@ -147,7 +147,15 @@ return {
 		dependencies = require("plugins.nvim-cmp").dependencies,
 		config = require("plugins.nvim-cmp").config,
 	},
-	{ "folke/which-key.nvim", opts = {} },
+	{
+		"folke/which-key.nvim",
+		event = "VeryLazy",
+		opts = {
+			win = {
+				border = "rounded",
+			},
+		},
+	},
 	{ "lewis6991/gitsigns.nvim", opts = require("plugins.gitsigns") },
 	{
 		"nvim-telescope/telescope.nvim",
