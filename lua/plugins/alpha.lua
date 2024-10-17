@@ -270,16 +270,6 @@ local config = {
 }
 
 return {
-	icon = icon,
-	button = button,
-	file_button = file_button,
-	mru = mru,
-	mru_opts = mru_opts,
-	section = section,
+	"goolord/alpha-nvim",
 	config = config,
-	-- theme config
-	nvim_web_devicons = nvim_web_devicons,
-	leader = leader,
-	-- deprecated
-	opts = config,
 }

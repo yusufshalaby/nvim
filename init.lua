@@ -67,24 +67,6 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 	pattern = "*",
 })
 
--- local markdown_enter_group = vim.api.nvim_create_augroup("MarkdownEnterBuffer", { clear = true })
--- vim.api.nvim_create_autocmd("BufEnter", {
--- 	callback = function()
--- 		vim.opt.conceallevel = 2
--- 	end,
--- 	group = markdown_enter_group,
--- 	pattern = "*.md",
--- })
---
--- local markdown_leave_group = vim.api.nvim_create_augroup("MarkdownLeaveBuffer", { clear = true })
--- vim.api.nvim_create_autocmd("BufLeave", {
---   callback = function()
---     vim.opt.conceallevel = 0
---   end,
---   group = markdown_leave_group,
---   pattern = "*.md",
--- })
-
 -- for neovide
 vim.opt.guifont = { "JetBrains Mono", ":h18" }
 vim.g.neovide_input_macos_option_key_is_meta = "both"
