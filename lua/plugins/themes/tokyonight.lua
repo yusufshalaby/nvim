@@ -44,11 +44,6 @@ return {
 			---@param highlights Highlights
 			---@param colors ColorScheme
 			on_highlights = function(highlights, colors)
-				highlights["@markup.raw.markdown_inline"] = {
-					bg = colors.bg,
-					fg = colors.blue,
-					style = "italic",
-				}
 				-- highlights.GitSignsAdd = { fg = colors.green }
 				-- highlights.GitSignsChange = { fg = colors.yellow }
 				-- highlights.GitSignsDelete = { fg = colors.red }
