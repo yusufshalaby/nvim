@@ -8,16 +8,16 @@ require("lspconfig").ruby_lsp.setup({
 	},
 })
 
--- require("lspconfig").sorbet.setup({
--- 	filetypes = { "ruby" },
--- 	cmd = { "srb", "tc", "--lsp", "--typed", "true" },
--- 	root_dir = function(fname)
--- 		return require("lspconfig.util").root_pattern("sorbet/config")(fname) or vim.fn.getcwd()
--- 	end,
--- 	capabilities = require("plugins.lsp.capabilities"),
--- 	on_attach = require("plugins.lsp.on_attach"),
--- })
---
+require("lspconfig").sorbet.setup({
+	filetypes = { "ruby" },
+	cmd = { "srb", "tc", "--lsp", "--typed", "true" },
+	root_dir = function(fname)
+		return require("lspconfig.util").root_pattern("sorbet/config")(fname) or vim.fn.getcwd()
+	end,
+	capabilities = require("plugins.lsp.capabilities"),
+	on_attach = require("plugins.lsp.on_attach"),
+})
+
 -- require("lspconfig").solargraph.setup({
 -- 	cmd = {
 -- 		"asdf",
