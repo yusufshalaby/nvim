@@ -9,8 +9,7 @@ return {
 		vim.g.slime_menu_config = false
 		vim.g.slime_neovim_ignore_unlisted = false
 		vim.api.nvim_command([[
-				let g:slime_bracketed_paste =1
-				let g:slime_config_defaults["python_ipython"] = 0
+				let g:slime_python_ipython = 1
 				let g:slime_config_defaults["dispatch_ipython_pause"] = 100
 
 				function! _EscapeText_python(text)
