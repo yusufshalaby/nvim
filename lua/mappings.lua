@@ -104,4 +104,7 @@ function TreesitterFolds()
 	vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 end
 
-vim.keymap.set("n", "<leader>tf", "<CMD>call v:lua.TreesitterFolds()<CR>", { desc = "Enable treesitter folds" })
+vim.keymap.set("n", "<leader>tf", function()
+	vim.cmd("call v:lua.TreesitterFolds()")
+	vim.cmd("normal! zR")
+end, { desc = "Enable treesitter folds" })
