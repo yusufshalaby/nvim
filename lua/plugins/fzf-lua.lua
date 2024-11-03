@@ -95,6 +95,14 @@ return {
 			end,
 			desc = "[F]ind [s]tring beneath the cursor",
 		},
+		{
+			"<leader>ws",
+			mode = { "n" },
+			function()
+				require("fzf-lua").lsp_live_workspace_symbols()
+			end,
+			"[W]orkspace [S]ymbols",
+		},
 	},
 	config = function()
 		-- calling `setup` is optional for customization
