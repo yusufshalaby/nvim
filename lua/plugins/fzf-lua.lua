@@ -11,7 +11,7 @@ return {
 				-- I ran into this issue inside my obsidian icloud folder
 				-- the fix has been merged but it's not been released yet
 				-- https://github.com/nvim-telescope/telescope.nvim/issues/2857#issue-2074014634
-				require("fzf-lua").oldfiles()
+				require("fzf-lua").oldfiles({ include_current_session = true, cwd_only = true })
 			end,
 			desc = "[F]ind recently [o]pened files",
 		},
