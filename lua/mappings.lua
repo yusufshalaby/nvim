@@ -17,6 +17,9 @@ map("t", "<Esc>", "<C-\\><C-n>", { unpack(opts), desc = "Escape terminal mode" }
 vim.keymap.set("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 vim.keymap.set("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 vim.keymap.set("n", "<leader><leader>", ":", { noremap = true, desc = "Command prompt" })
+vim.keymap.set("n", "<leader>i", function()
+	vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ 0 }), { 0 })
+end)
 
 -- Buffers
 map("n", "<tab>", "<Cmd>bn<CR>", opts)
