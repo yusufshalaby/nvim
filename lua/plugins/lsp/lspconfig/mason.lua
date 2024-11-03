@@ -12,27 +12,18 @@ require("mason-lspconfig").setup()
 --  If you want to override the default filetypes that your language server will attach to you can
 --  define the property 'filetypes' to the map in question.
 local servers = {
-	-- clangd = {},
-	-- gopls = {},
-	pyright = {
-		pyright = { autoImportCompletion = true },
-		python = {
-			-- https://github.com/microsoft/pyright/blob/main/docs/settings.md
+	gopls = {},
+	-- https://docs.basedpyright.com/latest/configuration/language-server-settings/
+	basedpyright = {
+		basedpyright = {
 			analysis = {
 				autoSearchPaths = true,
-				typeCheckingMode = "basic",
+				typeCheckingMode = "standard",
 				diagnosticMode = "openFilesOnly",
 				useLibraryCodeForTypes = true,
-				diagnosticSeverityOverrides = {
-					-- reportGeneralTypeIssues = "none",
-					--   reportOptionalMemberAccess = "none",
-					--   reportOptionalSubscript = "none",
-					--   reportPrivateImportUsage = "none",
-				},
 			},
 		},
 	},
-	-- ruff_lsp = {},
 	lua_ls = {}, -- TJ Devries lua lsp setup: https://github.com/neovim/neovim/issues/21686#issuecomment-1522446128
 	marksman = {},
 	html = {},
