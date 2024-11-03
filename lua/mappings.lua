@@ -105,9 +105,9 @@ vim.keymap.set("n", "<leader>jq", "<CMD>call v:lua.FormatJson()<CR>", { desc = "
 function TreesitterFolds()
 	vim.opt.foldmethod = "expr"
 	vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+	vim.opt.foldlevel = 99
 end
 
 vim.keymap.set("n", "<leader>tf", function()
 	vim.cmd("call v:lua.TreesitterFolds()")
-	vim.cmd("normal! zR")
 end, { desc = "Enable treesitter folds" })
