@@ -27,30 +27,41 @@ local servers = {
 	lua_ls = {}, -- TJ Devries lua lsp setup: https://github.com/neovim/neovim/issues/21686#issuecomment-1522446128
 	marksman = {},
 	html = {},
-	-- https://github.com/typescript-language-server/typescript-language-server/blob/master/docs/configuration.md#tsserver-options
-	ts_ls = {
+	-- https://github.com/yioneko/vtsls/blob/main/packages/service/configuration.schema.json
+	-- https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/plugins/extras/lang/typescript.lua
+	vtsls = {
+		complete_function_calls = true,
+		vtsls = {
+			enableMoveToFileCodeAction = true,
+			autoUseWorkspaceTsdk = true,
+			experimental = {
+				completion = {
+					enableServerSideFuzzyMatch = true,
+				},
+			},
+		},
 		typescript = {
+			updateImportsOnFileMove = { enabled = "always" },
+			suggest = {
+				completeFunctionCalls = true,
+			},
 			inlayHints = {
-				includeInlayParameterNameHints = "all",
-				includeInlayParameterNameHintsWhenArgumentMatchesName = false,
-				includeInlayFunctionParameterTypeHints = true,
-				includeInlayVariableTypeHints = true,
-				includeInlayVariableTypeHintsWhenTypeMatchesName = false,
-				includeInlayPropertyDeclarationTypeHints = true,
-				includeInlayFunctionLikeReturnTypeHints = true,
-				includeInlayEnumMemberValueHints = true,
+				parameterNames = { enabled = "all", suppressWhenArgumentMatchesName = true },
+				parameterTypes = { enabled = true },
+				variableTypes = { enabled = true, suppressWhenTypeMatchesName = true },
+				propertyDeclarationTypes = { enabled = true },
+				functionLikeReturnTypes = { enabled = true },
+				enumMemberValues = { enabled = true },
 			},
 		},
 		javascript = {
 			inlayHints = {
-				includeInlayParameterNameHints = "all",
-				includeInlayParameterNameHintsWhenArgumentMatchesName = false,
-				includeInlayFunctionParameterTypeHints = true,
-				includeInlayVariableTypeHints = true,
-				includeInlayVariableTypeHintsWhenTypeMatchesName = false,
-				includeInlayPropertyDeclarationTypeHints = true,
-				includeInlayFunctionLikeReturnTypeHints = true,
-				includeInlayEnumMemberValueHints = true,
+				parameterNames = { enabled = "all", suppressWhenArgumentMatchesName = true },
+				parameterTypes = { enabled = true },
+				variableTypes = { enabled = true, suppressWhenTypeMatchesName = true },
+				propertyDeclarationTypes = { enabled = true },
+				functionLikeReturnTypes = { enabled = true },
+				enumMemberValues = { enabled = true },
 			},
 		},
 	},
