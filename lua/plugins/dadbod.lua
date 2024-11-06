@@ -4,8 +4,18 @@ return {
 		{ "tpope/vim-dadbod", lazy = true },
 		{
 			"kristijanhusak/vim-dadbod-completion",
-			-- ft = { "sql", "mysql", "plsql" },
+			ft = { "sql", "mysql", "plsql" },
 			lazy = true,
+			dependencies = {
+				{ "hrsh7th/nvim-cmp", lazy = true },
+			},
+			config = function()
+				require("cmp").setup.buffer({
+					sources = {
+						{ name = "vim-dadbod-completion" },
+					},
+				})
+			end,
 		},
 	},
 	cmd = {
