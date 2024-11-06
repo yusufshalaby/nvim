@@ -4,8 +4,8 @@ return {
 	lazy = true,
 	ft = "markdown",
 	keys = {
-		{ "<leader>on", "<CMD>ObsidianNew<CR>", { desc = "Obsidian new" } },
-		{ "<leader>ot", "<CMD>ObsidianToday<CR>", { desc = "Obsidian today" } },
+		{ "<leader>on", "<CMD>ObsidianNew<CR>", desc = "Obsidian new" },
+		{ "<leader>ot", "<CMD>ObsidianToday<CR>", desc = "Obsidian today" },
 	},
 	dependencies = {
 		"nvim-lua/plenary.nvim",

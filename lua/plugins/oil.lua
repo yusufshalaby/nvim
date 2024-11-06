@@ -6,14 +6,14 @@ return {
 			function()
 				require("oil").toggle_float()
 			end,
-			{ desc = "Open oil" },
+			desc = "Open oil",
 		},
 		{
 			"-",
 			function()
 				require("oil").open()
 			end,
-			{ desc = "Open oil" },
+			desc = "Open oil",
 		},
 	},
 	event = { "Syntax" },
