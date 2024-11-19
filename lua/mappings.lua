@@ -27,6 +27,13 @@ map("n", "<S-tab>", "<Cmd>bp<CR>", opts)
 map("n", "<leader>b", "<Cmd>enew<CR>", { unpack(opts), desc = "New buffer" })
 map("n", "<leader>x", "<Cmd>bd<CR>", { unpack(opts), desc = "Delete buffer" })
 
+
+-- Window sizes
+map("n", "<C-Right>", "<Cmd>vertical resize +5<CR>", { unpack(opts), desc = "Increase window width" })
+map("n", "<C-Left>", "<Cmd>vertical resize -5<CR>", { unpack(opts), desc = "Decrease window width" })
+map("n", "<C-Up>", "<Cmd>resize +5<CR>", { unpack(opts), desc = "Increase window height" })
+map("n", "<C-Down>", "<Cmd>resize -5<CR>", { unpack(opts), desc = "Decrease window height" })
+
 -- Tabs
 map("n", "<leader><tab>", "<Cmd>tabnext<CR>", { unpack(opts), desc = "Next tab" })
 map("n", "<leader><S-tab>", "<Cmd>tabprevious<CR>", { unpack(opts), desc = "Previous tab" })
