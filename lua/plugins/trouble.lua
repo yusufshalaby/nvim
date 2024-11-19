@@ -47,5 +47,25 @@ return {
 			group = group,
 			callback = replace_quickfix_with_trouble,
 		})
+		vim.keymap.set("n", "[q", function()
+			if require("trouble").is_open() then
+				require("trouble").prev({ skip_groups = true, jump = true })
+			else
+				local ok, err = pcall(vim.cmd.cprev)
+				if not ok then
+					vim.notify(err, vim.log.levels.ERROR)
+				end
+			end
+		end)
+		vim.keymap.set("n", "]q", function()
+			if require("trouble").is_open() then
+				require("trouble").next({ skip_groups = true, jump = true })
+			else
+				local ok, err = pcall(vim.cmd.cnext)
+				if not ok then
+					vim.notify(err, vim.log.levels.ERROR)
+				end
+			end
+		end)
 	end,
 }
