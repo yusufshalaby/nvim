@@ -81,13 +81,11 @@ return {
 			window = {
 				documentation = cmp.config.window.bordered({
 					border = "double",
-					winhighlight =
-					"Normal:Normal,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None",
+					winhighlight = "Normal:Normal,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None",
 				}),
 				completion = cmp.config.window.bordered({
 					border = "single",
-					winhighlight =
-					"Normal:Normal,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None",
+					winhighlight = "Normal:Normal,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None",
 				}),
 			},
 		})
