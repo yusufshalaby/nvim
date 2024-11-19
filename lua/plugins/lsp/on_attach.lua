@@ -24,7 +24,7 @@ return function(_, bufnr)
 	nmap("gr", "<cmd> Trouble toggle lsp_references <CR>", "[G]oto [R]eferences")
 	nmap("gI", "<cmd> Trouble toggle lsp_implementations <CR>", "[G]oto [I]mplementation")
 	nmap("<leader>gD", "<cmd> Trouble toggle lsp_type_definitions <CR>", "[G]oto type [D]efinition")
-	nmap("<leader>ds", "<cmd> Trouble toggle symbols <CR>", "[D]ocument [S]ymbols")
+	nmap("<leader>ds", "<cmd> Trouble toggle symbols max_items=10000<CR>", "[D]ocument [S]ymbols")
 
 	-- See `:help K` for why this keymap
 	nmap("K", vim.lsp.buf.hover, "Hover Documentation")
