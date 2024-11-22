@@ -38,6 +38,7 @@ map("n", "<C-Down>", "<Cmd>resize -5<CR>", { unpack(opts), desc = "Decrease wind
 -- Tabs
 map("n", "<leader><tab>", "<Cmd>tabnext<CR>", { unpack(opts), desc = "Next tab" })
 map("n", "<leader><S-tab>", "<Cmd>tabprevious<CR>", { unpack(opts), desc = "Previous tab" })
+map("n", "<leader>X", "<Cmd>tabclose<CR>", { unpack(opts), desc = "Close tab" })
 
 -- Diagnostic keymaps
 vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to previous diagnostic message" })
