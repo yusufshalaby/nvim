@@ -28,5 +28,4 @@ return {
 	require("plugins.undotree"),
 	require("plugins.vim-slime"),
 	require("plugins.which-key"),
-	require("plugins.zen-mode"),
 }
