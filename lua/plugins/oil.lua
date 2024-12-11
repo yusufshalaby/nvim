@@ -26,6 +26,7 @@ return {
 			["H"] = "actions.toggle_hidden",
 			["g?"] = "actions.show_help",
 			["gx"] = "actions.open_external",
+			["gr"] = "actions.refresh",
 		},
 		columns = {
 			"icon",
