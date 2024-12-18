@@ -1,14 +1,14 @@
 return {
 	"saghen/blink.cmp",
-	event = "InsertEnter",
+	-- event = "InsertEnter",
 	lazy = false, -- lazy loading handled internally
 	-- optional: provides snippets for the snippet source
 	dependencies = "rafamadriz/friendly-snippets",
 
 	-- use a release tag to download pre-built binaries
-	version = "v0.*",
+	-- version = "v0.*",
 	-- OR build from source, requires nightly: https://rust-lang.github.io/rustup/concepts/channels.html#working-with-nightly-rust
-	-- build = 'cargo build --release',
+	build = "cargo +nightly build --release",
 	-- If you use nix, you can build from source using latest nightly rust with:
 	-- build = 'nix run .#build-plugin',
 
@@ -38,7 +38,10 @@ return {
 			menu = {
 				border = "single", -- rounded, single, double, shadow
 				draw = {
-					columns = { { "kind_icon", "label", "label_description", gap = 1 }, { "kind", "source_name", gap =1 } },
+					columns = {
+						{ "kind_icon", "label", "label_description", gap = 1 },
+						{ "kind", "source_name", gap = 1 },
+					},
 				},
 				winhighlight = "Normal:Normal,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None",
 			},
