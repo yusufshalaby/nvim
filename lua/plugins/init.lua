@@ -19,7 +19,6 @@ return {
 	require("plugins.markdown-preview"),
 	require("plugins.nvim-colorizer"),
 	require("plugins.nvim-treesitter"),
-	require("plugins.obsidian"),
 	require("plugins.oil"),
 	require("plugins.rainbow-csv"),
 	require("plugins.test"),
