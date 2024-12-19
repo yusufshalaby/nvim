@@ -10,6 +10,7 @@ return {
 	require("plugins.flash"),
 	require("plugins.format"),
 	require("plugins.fzf-lua"),
+	require("plugins.nvim-autopairs"),
 	require("plugins.git"),
 	require("plugins.harpoon"),
 	require("plugins.indent-blankline"),
