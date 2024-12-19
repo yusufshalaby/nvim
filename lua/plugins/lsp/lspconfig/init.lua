@@ -5,6 +5,7 @@ return {
 		{ "williamboman/mason.nvim", opts = { ui = { border = "rounded" } } },
 		"williamboman/mason-lspconfig.nvim",
 		{ "j-hui/fidget.nvim", opts = {} },
+		{ "saghen/blink.cmp" },
 	},
 	event = { "BufReadPre", "BufNewFile" },
 	config = function()
