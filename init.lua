@@ -44,7 +44,7 @@ vim.wo.signcolumn = "yes"
 vim.wo.relativenumber = true
 vim.diagnostic.config({
 	float = {
-		border = "double",
+		border = "rounded",
 	},
 })
 
