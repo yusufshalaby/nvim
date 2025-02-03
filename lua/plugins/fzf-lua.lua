@@ -39,7 +39,7 @@ return {
 			"<leader>ff",
 			mode = { "n" },
 			function()
-				require("fzf-lua").files()
+				require("fzf-lua").files({ cwd_prompt = false })
 			end,
 			desc = "[F]ind [F]iles",
 		},
