@@ -65,6 +65,11 @@ local servers = {
 			},
 		},
 	},
+	tinymist = {
+		formatterMode = "disable", --"typstyle",
+		exportPdf = "never", -- "onType",
+		semanticTokens = "disable",
+	},
 }
 
 local mason_lspconfig = require("mason-lspconfig")

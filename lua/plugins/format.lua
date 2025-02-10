@@ -25,6 +25,7 @@ return {
 				bash = { "shfmt" },
 				sh = { "shfmt" },
 				lua = { "stylua" },
+				typst = { "typstyle" },
 			},
 		})
 	end,
