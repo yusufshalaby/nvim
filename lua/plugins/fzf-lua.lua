@@ -55,9 +55,14 @@ return {
 			"<leader>fd",
 			mode = { "n" },
 			function()
-				require("fzf-lua").diagnostics_workspace()
+				require("fzf-lua").files({
+					cwd_prompt = false,
+					fd_opts = [[--color=never --hidden --type d --exclude .git]],
+					previewer = false,
+					winopts = { title = "Directories " },
+				})
 			end,
-			desc = "[F]ind [D]iagnostics",
+			desc = "[F]ind [D]iriectories",
 		},
 		{
 			"<leader>fr",
