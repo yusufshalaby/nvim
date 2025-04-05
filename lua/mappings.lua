@@ -41,8 +41,6 @@ map("n", "<leader><S-tab>", "<Cmd>tabprevious<CR>", { unpack(opts), desc = "Prev
 map("n", "<leader>X", "<Cmd>tabclose<CR>", { unpack(opts), desc = "Close tab" })
 
 -- Diagnostic keymaps
-vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to previous diagnostic message" })
-vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next diagnostic message" })
 vim.keymap.set("n", "<leader>fl", vim.diagnostic.open_float, { desc = "Open floating diagnostic message" })
 
 vim.keymap.set("n", "[Q", "<Cmd>cfirst<CR>", { desc = "Go to first quickfix item" })
@@ -60,18 +58,6 @@ vim.keymap.set(
 
 -- Treesitter Context
 vim.keymap.set("n", "<leader>tc", "<CMD>TSContextEnable<CR>", { desc = "Enable treesitter context" })
-
--- JQ
-function FormatJson()
-	local file_extension = vim.fn.expand("%:e")
-	if file_extension == "json" then
-		vim.cmd([[silent! %!jq .]])
-	else
-		print("This command is only available for JSON files.")
-	end
-end
-
-vim.keymap.set("n", "<leader>jq", "<CMD>call v:lua.FormatJson()<CR>", { desc = "Format JSON" })
 
 -- Treesitter folds
 function TreesitterFolds()

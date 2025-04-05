@@ -26,6 +26,7 @@ vim.opt.foldenable = false
 vim.opt.scrolloff = 4
 vim.o.hlsearch = true
 vim.o.mouse = "a"
+vim.o.winborder = "rounded"
 vim.o.clipboard = "unnamedplus"
 vim.o.breakindent = true
 vim.o.undofile = true
@@ -43,9 +44,12 @@ vim.wo.number = true
 vim.wo.signcolumn = "yes"
 vim.wo.relativenumber = true
 vim.diagnostic.config({
-	float = {
-		border = "rounded",
-	},
+  -- virtual_lines = {
+  --   current_line = true,
+  -- },
+  virtual_text = {
+    current_line = true,
+  }
 })
 
 -- for vim-rhubarb to open browser
