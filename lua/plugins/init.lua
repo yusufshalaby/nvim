@@ -11,6 +11,7 @@ return {
 	require("plugins.format"),
 	require("plugins.fzf-lua"),
 	require("plugins.git"),
+	require("plugins.kulala"),
 	require("plugins.harpoon"),
 	require("plugins.indent-blankline"),
 	require("plugins.lint"),
