@@ -68,3 +68,6 @@ end
 vim.keymap.set("n", "<leader>tf", function()
 	vim.cmd("call v:lua.TreesitterFolds()")
 end, { desc = "Enable treesitter folds" })
+
+
+vim.keymap.set("n", "<leader>G", ":Git ", { desc = "Git cmd" })
