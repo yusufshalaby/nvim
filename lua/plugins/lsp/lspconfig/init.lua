@@ -2,8 +2,8 @@ return {
 	-- LSP Configuration & Plugins
 	"neovim/nvim-lspconfig",
 	dependencies = {
-		{ "williamboman/mason.nvim", opts = { ui = { border = "rounded" } } },
-		"williamboman/mason-lspconfig.nvim",
+		{ "mason-org/mason.nvim", version = "1.11.0", opts = { ui = { border = "rounded" } } },
+		{ "mason-org/mason-lspconfig.nvim", version = "1.32.0" },
 		{ "j-hui/fidget.nvim", opts = {} },
 		{ "saghen/blink.cmp" },
 	},
