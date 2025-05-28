@@ -71,3 +71,4 @@ end, { desc = "Enable treesitter folds" })
 
 
 vim.keymap.set("n", "<leader>G", ":Git ", { desc = "Git cmd" })
+vim.keymap.set("n", "<leader>gl", "<Cmd>Git pull<CR>", { desc = "Git pull" })
