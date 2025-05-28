@@ -44,6 +44,14 @@ return {
 			},
 		},
 		ui = { enable = false },
+		completion = {
+			-- Enables completion using nvim_cmp
+			nvim_cmp = false,
+			-- Enables completion using blink.cmp
+			blink = true,
+			-- Trigger completion at 2 chars.
+			min_chars = 2,
+		},
 
 		-- see below for full list of options 👇
 	},
