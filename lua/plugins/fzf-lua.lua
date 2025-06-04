@@ -97,6 +97,14 @@ return {
 			desc = "[F]ind [s]tring beneath the cursor",
 		},
 		{
+			"<leader>fq",
+			mode = { "n" },
+			function()
+				require("fzf-lua").quickfix()
+			end,
+			desc = "[F]ind [Q]uickfix",
+		},
+		{
 			"<leader>ws",
 			mode = { "n" },
 			function()
