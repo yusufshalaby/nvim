@@ -23,8 +23,7 @@ map("n", "<S-tab>", "<Cmd>bp<CR>", opts)
 map("n", "<leader>b", "<Cmd>enew<CR>", { unpack(opts), desc = "New buffer" })
 map("n", "<leader>x", "<Cmd>bd<CR>", { unpack(opts), desc = "Delete buffer" })
 
-
--- Windows 
+-- Windows
 map("n", "<C-h>", "<C-w>h", { unpack(opts), desc = "Window left" })
 map("n", "<C-l>", "<C-w>l", { unpack(opts), desc = "Window right" })
 map("n", "<C-j>", "<C-w>j", { unpack(opts), desc = "Window down" })
@@ -48,12 +47,20 @@ vim.keymap.set("n", "]l", "<Cmd>lnext<CR>", { desc = "Go to next location list i
 vim.keymap.set("n", "[l", "<Cmd>lprev<CR>", { desc = "Go to previous location list item" })
 vim.keymap.set("n", "[L", "<Cmd>lfirst<CR>", { desc = "Go to first location list item" })
 vim.keymap.set("n", "]L", "<Cmd>llast<CR>", { desc = "Go to last location list item" })
-vim.keymap.set(
-	"n",
-	"<leader>gq",
-	"<Cmd>Git difftool | cclose | Trouble quickfix<CR>",
-	{ desc = "Send git diff to quickfix" }
-)
+vim.keymap.set("n", "<leader>gq", "<Cmd>Git difftool<CR>", { desc = "Send git diff to quickfix" })
+
+local function toggle_quickfix()
+	local windows = vim.fn.getwininfo()
+	for _, win in pairs(windows) do
+		if win["quickfix"] == 1 then
+			vim.cmd.cclose()
+			return
+		end
+	end
+	vim.cmd.copen()
+end
+
+vim.keymap.set("n", "<leader>q", toggle_quickfix, { desc = "Open quickfix list" })
 
 -- Treesitter Context
 vim.keymap.set("n", "<leader>tc", "<CMD>TSContextEnable<CR>", { desc = "Enable treesitter context" })
@@ -68,7 +75,6 @@ end
 vim.keymap.set("n", "<leader>tf", function()
 	vim.cmd("call v:lua.TreesitterFolds()")
 end, { desc = "Enable treesitter folds" })
-
 
 vim.keymap.set("n", "<leader>G", ":Git ", { desc = "Git cmd" })
 vim.keymap.set("n", "<leader>gl", "<Cmd>Git pull<CR>", { desc = "Git pull" })

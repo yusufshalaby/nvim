@@ -8,16 +8,6 @@ return {
 			"<cmd>Trouble diagnostics toggle<cr>",
 			desc = "Toggle diagnostics",
 		},
-		{
-			"<leader>q",
-			"<cmd>Trouble quickfix toggle<cr>",
-			desc = "Toggle diagnostics",
-		},
-		{
-			"<leader>l",
-			"<cmd>Trouble loclist toggle<cr>",
-			desc = "Toggle diagnostics",
-		},
 	},
 	-- opts = {},
 	config = function()
