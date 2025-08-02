@@ -2,6 +2,7 @@ return {
 	"obsidian-nvim/obsidian.nvim",
 	version = "*", -- recommended, use latest release instead of latest commit
 	lazy = true,
+	cmd = { "Obsidian" },
 	ft = "markdown",
 	-- Replace the above line with this if you only want to load obsidian.nvim for markdown files in your vault:
 	-- event = {
@@ -25,23 +26,10 @@ return {
 				name = "personal",
 				path = "/Users/yusufshalaby/Library/Mobile Documents/iCloud~md~obsidian/Documents/notes",
 			},
-			{
-				name = "no-vault",
-				path = function()
-					-- alternatively use the CWD:
-					-- return assert(vim.fn.getcwd())
-					return assert(vim.fs.dirname(vim.api.nvim_buf_get_name(0)))
-				end,
-				overrides = {
-					notes_subdir = nil,
-					new_notes_location = "current_dir",
-					daily_notes = { folder = nil, template = nil },
-					templates = {
-						subdir = vim.NIL,
-					},
-					disable_frontmatter = true,
-				},
-			},
+		},
+		daily_notes = {
+			-- Optional, if you keep daily notes in a separate directory.
+			folder = "dailies",
 		},
 		ui = { enable = false },
 		completion = {
