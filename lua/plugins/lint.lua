@@ -1,11 +1,12 @@
 return {
 	"mfussenegger/nvim-lint",
 	lazy = true,
-	ft = { "python", "robot" },
+	ft = { "python", "robot", "sql" },
 	config = function()
 		require("lint").linters_by_ft = {
 			python = { "ruff" },
 			robot = { "robocop" },
+			sql = { "sqlfluff" },
 		}
 		vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost" }, {
 			callback = function()
