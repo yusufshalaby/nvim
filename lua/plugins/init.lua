@@ -4,7 +4,6 @@ return {
 	"tpope/vim-surround",
 	require("plugins.blink"),
 	require("plugins.carbon-now"),
-	require("plugins.copilot"),
 	require("plugins.dadbod"),
 	require("plugins.debug"),
 	require("plugins.flash"),
