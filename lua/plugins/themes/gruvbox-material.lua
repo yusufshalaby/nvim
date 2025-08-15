@@ -10,5 +10,8 @@ return {
 		vim.cmd("colorscheme gruvbox-material")
 		vim.cmd("hi CursorLineNr guifg=#d8a657")
 		vim.cmd("hi @markup.italic.markdown_inline cterm=italic gui=italic")
+		vim.cmd("hi NormalFloat guibg=NONE")
+		vim.cmd("hi FloatBorder guibg=NONE")
+		vim.cmd("hi FloatTitle guibg=NONE")
 	end,
 }
