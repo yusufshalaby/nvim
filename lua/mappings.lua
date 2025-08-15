@@ -34,9 +34,9 @@ map("n", "<C-Up>", "<Cmd>resize +5<CR>", { unpack(opts), desc = "Increase window
 map("n", "<C-Down>", "<Cmd>resize -5<CR>", { unpack(opts), desc = "Decrease window height" })
 
 -- Tabs
-map("n", "<leader><tab>", "<Cmd>tabnext<CR>", { unpack(opts), desc = "Next tab" })
-map("n", "<leader><S-tab>", "<Cmd>tabprevious<CR>", { unpack(opts), desc = "Previous tab" })
-map("n", "<leader>X", "<Cmd>tabclose<CR>", { unpack(opts), desc = "Close tab" })
+-- map("n", "<leader><tab>", "<Cmd>tabnext<CR>", { unpack(opts), desc = "Next tab" })
+-- map("n", "<leader><S-tab>", "<Cmd>tabprevious<CR>", { unpack(opts), desc = "Previous tab" })
+-- map("n", "<leader>X", "<Cmd>tabclose<CR>", { unpack(opts), desc = "Close tab" })
 
 -- Diagnostic keymaps
 vim.keymap.set("n", "<leader>fl", vim.diagnostic.open_float, { desc = "Open floating diagnostic message" })
