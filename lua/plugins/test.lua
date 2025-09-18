@@ -9,7 +9,7 @@ return {
 				"nvim-treesitter/nvim-treesitter",
 				"nvim-neotest/neotest-python",
 				"rouge8/neotest-rust",
-				"nvim-neotest/neotest-go",
+				{ "fredrikaverpil/neotest-golang", version = "*" },
 			},
 		},
 		config = function()
@@ -21,7 +21,7 @@ return {
 						-- python = "venv/bin/python",
 					}),
 					require("neotest-rust"),
-					require("neotest-go"),
+					require("neotest-golang")({ testify_enabled = true }),
 				},
 				status = { virtual_text = true },
 				output = { open_on_run = true },
