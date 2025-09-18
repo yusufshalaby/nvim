@@ -57,6 +57,13 @@ vim.api.nvim_create_user_command("Browse", function(opts)
 	vim.fn.system({ "open", opts.fargs[1] })
 end, { nargs = 1 })
 
+-- word count command
+vim.api.nvim_create_user_command("Wc", function()
+  local file = vim.fn.expand("%:p")
+  local output = vim.fn.system({ "wc", "-w", file })
+  print(output)
+end, {})
+
 require("mappings")
 require("lazy").setup({ require("plugins") }, { ui = { border = "rounded", backdrop = 100 } })
 
