@@ -63,7 +63,7 @@ end
 vim.keymap.set("n", "<leader>q", toggle_quickfix, { desc = "Open quickfix list" })
 
 -- Treesitter Context
-vim.keymap.set("n", "<leader>tc", "<CMD>TSContextEnable<CR>", { desc = "Enable treesitter context" })
+vim.keymap.set("n", "<leader>tc", "<CMD>TSContext enable<CR>", { desc = "Enable treesitter context" })
 
 -- Treesitter folds
 function TreesitterFolds()
