@@ -21,7 +21,10 @@ return {
 		opts = {
 			sources = {
 				-- add vim-dadbod-completion to your completion providers
-				default = { "lsp", "path", "snippets", "buffer", "dadbod" },
+				default = { "lsp", "path", "snippets", "buffer" },
+				per_filetype = {
+					sql = { "snippets", "dadbod", "buffer" },
+				},
 				providers = {
 					dadbod = { name = "Dadbod", module = "vim_dadbod_completion.blink" },
 				},
