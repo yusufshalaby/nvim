@@ -116,7 +116,7 @@ return {
 	config = function()
 		-- calling `setup` is optional for customization
 		require("fzf-lua").setup({
-			"fzf-native",
+			"max-perf",
 			fzf_colors = true,
 			keymap = { fzf = { ["ctrl-q"] = "select-all+accept" } },
 		})
