@@ -29,5 +29,6 @@ return {
 				on_attach(client, bufnr)
 			end,
 		})
+		-- require("plugins.lsp.dbt")
 	end,
 }

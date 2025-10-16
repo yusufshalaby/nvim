@@ -9,6 +9,4 @@ return {
 			},
 		},
 	},
-	capabilities = require("plugins.lsp.capabilities"),
-	on_attach = require("plugins.lsp.on_attach"),
 }

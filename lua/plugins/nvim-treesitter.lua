@@ -24,6 +24,7 @@ return {
 					"c",
 					"cpp",
 					"go",
+					"http",
 					"javascript",
 					"lua",
 					"markdown_inline",
