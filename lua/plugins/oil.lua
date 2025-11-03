@@ -2,13 +2,6 @@ return {
 	"stevearc/oil.nvim",
 	keys = {
 		{
-			"<C-n>",
-			function()
-				require("oil").toggle_float()
-			end,
-			desc = "Open oil",
-		},
-		{
 			"-",
 			function()
 				require("oil").open()
@@ -21,7 +14,7 @@ return {
 		use_default_keymaps = false,
 		keymaps = {
 			["-"] = "actions.parent",
-			["<C-n>"] = "actions.close",
+			["<C-->"] = "actions.close",
 			["<CR>"] = "actions.select",
 			["H"] = "actions.toggle_hidden",
 			["g?"] = "actions.show_help",
