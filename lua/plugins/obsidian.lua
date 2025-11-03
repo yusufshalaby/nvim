@@ -23,9 +23,13 @@ return {
 	opts = {
 		legacy_commands = false,
 		workspaces = {
+			-- {
+			-- 	name = "personal",
+			-- 	path = "/Users/yusufshalaby/Library/Mobile Documents/iCloud~md~obsidian/Documents/notes",
+			-- },
 			{
-				name = "personal",
-				path = "/Users/yusufshalaby/Library/Mobile Documents/iCloud~md~obsidian/Documents/notes",
+				name = "work",
+				path = "/Users/yusufshalaby/notes",
 			},
 		},
 		daily_notes = {

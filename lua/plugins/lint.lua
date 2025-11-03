@@ -16,7 +16,9 @@ return {
 			lint.linters_by_ft.sql = { "sqlfluff" }
 		end
 
+		vim.api.nvim_create_augroup("lint", { clear = true })
 		vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost" }, {
+			group="lint",
 			callback = function()
 				local ft = vim.bo.filetype
 				-- Only try linting if there is a linter configured for the current filetype
