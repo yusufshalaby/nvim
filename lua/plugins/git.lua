@@ -12,30 +12,30 @@ return {
 				changedelete = { text = "~" },
 			},
 			on_attach = function(bufnr)
-				vim.keymap.set("n", "<leader>gp", function()
-					require("gitsigns").preview_hunk()
-				end, { buffer = bufnr, desc = "Preview git hunk" })
-				vim.keymap.set("n", "<leader>gr", function()
-					require("gitsigns").reset_hunk()
-				end, { buffer = bufnr, desc = "Reset git hunk" })
-				vim.keymap.set("n", "<leader>gt", function()
-					require("gitsigns").toggle_deleted()
-				end, { buffer = bufnr, desc = "Toggle deleted" })
-				vim.keymap.set("n", "<leader>gs", function()
-					require("gitsigns").stage_hunk()
-				end, { buffer = bufnr, desc = "Stage hunk" })
-				vim.keymap.set("n", "<leader>gb", function()
-					require("gitsigns").blame_line()
-				end, { buffer = bufnr, desc = "Blame line" })
-
 				-- don't override the built-in and fugitive keymaps
 				local gs = package.loaded.gitsigns
+				vim.keymap.set("n", "<leader>gp", function()
+					gs.preview_hunk()
+				end, { buffer = bufnr, desc = "Preview git hunk" })
+				vim.keymap.set("n", "<leader>gr", function()
+					gs.reset_hunk()
+				end, { buffer = bufnr, desc = "Reset git hunk" })
+				vim.keymap.set("n", "<leader>gt", function()
+					gs.preview_hunk_inline()
+				end, { buffer = bufnr, desc = "Toggle deleted" })
+				vim.keymap.set("n", "<leader>gs", function()
+					gs.stage_hunk()
+				end, { buffer = bufnr, desc = "Stage hunk" })
+				vim.keymap.set("n", "<leader>gb", function()
+					gs.blame()
+				end, { buffer = bufnr, desc = "Git Blame" })
+
 				vim.keymap.set({ "n", "v" }, "]c", function()
 					if vim.wo.diff then
 						return "]c"
 					end
 					vim.schedule(function()
-						gs.next_hunk()
+						gs.nav_hunk("next")
 					end)
 					return "<Ignore>"
 				end, { expr = true, buffer = bufnr, desc = "Jump to next hunk" })
@@ -44,7 +44,7 @@ return {
 						return "[c"
 					end
 					vim.schedule(function()
-						gs.prev_hunk()
+						gs.nav_hunk("prev")
 					end)
 					return "<Ignore>"
 				end, { expr = true, buffer = bufnr, desc = "Jump to previous hunk" })
