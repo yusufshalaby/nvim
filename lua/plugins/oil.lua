@@ -20,6 +20,7 @@ return {
 			["g?"] = "actions.show_help",
 			["gx"] = "actions.open_external",
 			["gr"] = "actions.refresh",
+			["gp"] = { "actions.preview", opts = { vertical = true, split = "botright" } }
 		},
 		columns = {
 			"icon",
