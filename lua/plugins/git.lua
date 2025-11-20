@@ -53,7 +53,7 @@ return {
 	},
 	{
 		"sindrets/diffview.nvim",
-		cmd = { "DiffviewOpen", "DiffviewFileHistory" },
+		cmd = { "DiffviewOpen", "DiffviewFileHistory", "PR" },
 		config = function()
 			require("diffview").setup({
 				-- view = {
@@ -64,7 +64,12 @@ return {
 				default_args = {
 					DiffviewOpen = { "--imply-local" },
 				},
+
 			})
+
+			vim.api.nvim_create_user_command("PR", function()
+				require("diffview").open({ "origin/HEAD...HEAD" })
+			end, {})
 		end,
 	},
 }
