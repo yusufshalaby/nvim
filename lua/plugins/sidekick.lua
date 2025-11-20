@@ -6,6 +6,11 @@ return {
 			mux = {
 				enabled = false,
 			},
+			win = {
+				keys = {
+					prompt = false, -- This is where you disable the <c-p> keymap!
+				},
+			},
 		},
 		nes = {
 			enabled = false,
