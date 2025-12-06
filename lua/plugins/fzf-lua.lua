@@ -118,7 +118,17 @@ return {
 		require("fzf-lua").setup({
 			"max-perf",
 			fzf_colors = true,
-			keymap = { fzf = { ["ctrl-q"] = "select-all+accept" } },
+			winopts = {
+				preview = {
+					hidden = true
+				}
+			},
+			keymap = {
+				fzf = {
+					["ctrl-q"] = "select-all+accept",
+					["ctrl-z"] = "toggle-preview"
+				}
+			},
 		})
 	end,
 }
