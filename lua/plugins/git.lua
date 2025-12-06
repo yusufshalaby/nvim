@@ -21,7 +21,7 @@ return {
 					gs.reset_hunk()
 				end, { buffer = bufnr, desc = "Reset git hunk" })
 				vim.keymap.set("n", "<leader>gt", function()
-					gs.preview_hunk_inline()
+					gs.diffthis()
 				end, { buffer = bufnr, desc = "Toggle deleted" })
 				vim.keymap.set("n", "<leader>gs", function()
 					gs.stage_hunk()

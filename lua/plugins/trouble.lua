@@ -8,10 +8,15 @@ return {
 			"<cmd>Trouble diagnostics toggle<cr>",
 			desc = "Toggle diagnostics",
 		},
+		{
+			"<leader>ds",
+			"<cmd> Trouble toggle symbols max_items=10000<CR>",
+			desc = "[D]ocument [S]ymbols"
+		}
 	},
 	-- opts = {},
 	config = function()
-		require("trouble").setup({auto_preview = false})
+		require("trouble").setup({ auto_preview = false })
 		vim.api.nvim_set_hl(0, "TroubleNormal", { link = "Normal" })
 		vim.api.nvim_set_hl(0, "TroubleNormalNC", { link = "Normal" })
 

@@ -16,30 +16,7 @@ return function(_, bufnr)
 	-- vim.lsp.handlers["textDocument/hover"] = vim.lsp.buf.hover({ border = "double" })
 	-- vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.buf.signature_help({ border = "double" })
 
-	nmap("<leader>rn", vim.lsp.buf.rename, "[R]e[n]ame")
-	nmap("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
-
-	nmap("gd", "<cmd> Trouble toggle lsp_definitions <CR>", "[G]oto [D]efinition")
-	nmap("gr", "<cmd> Trouble toggle lsp_references <CR>", "[G]oto [R]eferences")
-	nmap("gI", "<cmd> Trouble toggle lsp_implementations <CR>", "[G]oto [I]mplementation")
-	nmap("<leader>gD", "<cmd> Trouble toggle lsp_type_definitions <CR>", "[G]oto type [D]efinition")
 	nmap("<leader>ds", "<cmd> Trouble toggle symbols max_items=10000<CR>", "[D]ocument [S]ymbols")
-
-	-- See `:help K` for why this keymap
-	nmap("K", function()
-		vim.lsp.buf.hover()
-	end, "Hover Documentation")
-	vim.keymap.set({ "n", "i" }, "<A-k>", function()
-		vim.lsp.buf.signature_help()
-	end, { desc = "Signature Documentation" })
-
-	-- Lesser used LSP functionality
-	nmap("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
-	nmap("<leader>wa", vim.lsp.buf.add_workspace_folder, "[W]orkspace [A]dd Folder")
-	nmap("<leader>wr", vim.lsp.buf.remove_workspace_folder, "[W]orkspace [R]emove Folder")
-	nmap("<leader>wl", function()
-		print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-	end, "[W]orkspace [L]ist Folders")
 
 	-- Create a command `:Format` local to the LSP buffer
 	vim.api.nvim_buf_create_user_command(bufnr, "Format", function(_)
