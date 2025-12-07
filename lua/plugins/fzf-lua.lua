@@ -116,7 +116,7 @@ return {
 	config = function()
 		-- calling `setup` is optional for customization
 		require("fzf-lua").setup({
-			"max-perf",
+			"fzf-native",
 			fzf_colors = true,
 			winopts = {
 				preview = {
