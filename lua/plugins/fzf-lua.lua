@@ -58,7 +58,7 @@ return {
 				require("fzf-lua").files({
 					cwd_prompt = false,
 					fd_opts = [[--color=never --hidden --type d --exclude .git]],
-					previewer = false,
+					previewer = 'hide',
 					winopts = { title = "Directories " },
 				})
 			end,
@@ -116,7 +116,7 @@ return {
 	config = function()
 		-- calling `setup` is optional for customization
 		require("fzf-lua").setup({
-			"fzf-native",
+			{ "fzf-native", "hide" },
 			fzf_colors = true,
 			winopts = {
 				preview = {
