@@ -13,7 +13,7 @@ return {
 
 		-- Conditionally enable sqlfluff if it's in PATH
 		if vim.fn.executable("sqlfluff") == 1 then
-			require("lint").linters.sqlfluff.args = { "lint", "--format=json" }
+			-- require("lint").linters.sqlfluff.args = { "lint", "--format=json" }
 			lint.linters_by_ft.sql = { "sqlfluff" }
 		end
 
