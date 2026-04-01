@@ -16,6 +16,7 @@ vim.keymap.set("n", "<leader><leader>", ":", { noremap = true, desc = "Command p
 vim.keymap.set("n", "<leader>i", function()
 	vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ 0 }), { 0 })
 end, { desc = "Toggle inlay hints" })
+map("n", "<C-w><C-]>", "<C-w><C-]><C-w>L", opts)
 
 -- Buffers
 -- map("n", "<tab>", "<Cmd>bn<CR>", opts)

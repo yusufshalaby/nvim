@@ -17,6 +17,7 @@ return function(_, bufnr)
 	-- vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.buf.signature_help({ border = "double" })
 
 	nmap("<leader>ds", "<cmd> Trouble toggle symbols max_items=10000<CR>", "[D]ocument [S]ymbols")
+	nmap("<C-s>", vim.lsp.buf.signature_help, "Signature help")
 
 	-- Create a command `:Format` local to the LSP buffer
 	vim.api.nvim_buf_create_user_command(bufnr, "Format", function(_)

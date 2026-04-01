@@ -21,7 +21,7 @@ return {
 	require("plugins.nvim-autopairs"),
 	require("plugins.nvim-colorizer"),
 	require("plugins.nvim-treesitter"),
-	require("plugins.nvim-tree"),
+	-- require("plugins.nvim-tree"),
 	require("plugins.obsidian"),
 	require("plugins.oil"),
 	-- require("plugins.opencode"),

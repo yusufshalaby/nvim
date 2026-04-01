@@ -5,6 +5,12 @@ return {
 		terminal = {
 			provider = "none", -- no UI actions; server + tools remain available
 		},
+		diff_opts = {
+			auto_close_on_accept = true,
+			vertical_split = true,
+			open_in_current_tab = false,
+			keep_terminal_focus = true, -- If true, moves focus back to terminal after diff opens (including floating terminals)
+		},
 	},
 	lazy = false,
 	keys = {
