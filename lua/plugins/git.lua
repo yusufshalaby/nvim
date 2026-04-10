@@ -69,11 +69,12 @@ return {
 		cmd = { "DiffviewOpen", "DiffviewFileHistory", "PR" },
 		config = function()
 			require("diffview").setup({
-				-- view = {
-				-- 	diff_view = { layout = "diff2_horizontal" },
-				-- 	default = { layout = "diff2_horizontal" },
-				-- },
-				win_config = { type = "split", position = "bottom" },
+				file_panel = {
+					win_config = {
+						position = "bottom",
+						height = 10,
+					},
+				},
 				default_args = {
 					DiffviewOpen = { "--imply-local" },
 				},
