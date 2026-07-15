@@ -56,12 +56,10 @@ return {
 		},
 		sources = {
 			default = { "lsp", "path", "snippets", "buffer" },
-			-- optionally disable cmdline completions
-			-- cmdline = {},
 		},
-		-- cmdline = {
-		-- 	enabled = true,
-		-- },
+		cmdline = {
+			enabled = false,
+		},
 
 		-- experimental signature help support
 		signature = {
