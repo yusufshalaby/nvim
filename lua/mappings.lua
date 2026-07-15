@@ -77,5 +77,7 @@ vim.keymap.set("n", "<leader>tf", function()
 	vim.cmd("call v:lua.TreesitterFolds()")
 end, { desc = "Enable treesitter folds" })
 
+vim.keymap.set("n", "<leader>fi", ":find ", { desc = "Find shortcut" })
+vim.keymap.set("n", "<leader>b", ":b ", { desc = "buffer list" })
 vim.keymap.set("n", "<leader>G", ":Git ", { desc = "Git cmd" })
 vim.keymap.set("n", "<leader>gl", "<Cmd>Git pull<CR>", { desc = "Git pull" })

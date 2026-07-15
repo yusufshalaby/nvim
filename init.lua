@@ -37,6 +37,7 @@ vim.o.timeoutlen = 300
 vim.o.completeopt = "menuone,noselect"
 vim.o.termguicolors = true
 vim.o.cursorline = true
+vim.opt.path = vim.opt.path + "**"
 vim.o.cursorlineopt = "number"
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
