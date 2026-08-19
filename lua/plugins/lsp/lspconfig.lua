@@ -2,15 +2,17 @@ return {
 	-- LSP Configuration & Plugins
 	"neovim/nvim-lspconfig",
 	dependencies = {
-		{ "mason-org/mason.nvim", opts = { ui = { border = "rounded" } } },
+		{ "mason-org/mason.nvim",          opts = { ui = { border = "rounded" } } },
 		{ "mason-org/mason-lspconfig.nvim" },
-		{ "j-hui/fidget.nvim", opts = {} },
+		{ "j-hui/fidget.nvim",             opts = {} },
 		{ "saghen/blink.cmp" },
 	},
 	event = { "BufReadPre", "BufNewFile" },
 	config = function()
 		require("mason").setup()
-		require("mason-lspconfig").setup()
+		require("mason-lspconfig").setup(
+			{ automatic_enable = { exclude = { "rust_analyzer" } } }
+		)
 		local on_attach = require("plugins.lsp.on_attach")
 		vim.api.nvim_create_autocmd("LspAttach", {
 			callback = function(args)
